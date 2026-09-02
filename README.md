@@ -66,7 +66,19 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 
 ## 👁 Visão do Projeto <a name="visao-do-projeto"></a>
 
-<p>O CHATin é um assistente virtual gamificado que atua como coach de estudos para candidatos ao vestibular, utilizando processamento de linguagem natural e inteligência artificial de forma pontual para orientar a jornada de aprendizado do estudante. A partir de um diagnóstico inicial e do objetivo informado (curso e data da prova), o sistema monta uma trilha de estudos personalizada, propõe atividades e missões, acompanha o desempenho e oferece feedback individualizado. O engajamento é mantido por meio de mecânicas de gamificação (XP, níveis, streak e conquistas). O núcleo do assistente foi projetado para ser adaptável a outros contextos de aprendizado além do vestibular, sem a necessidade de reconstrução completa da aplicação.</p>
+<p>O CHATin é um assistente de estudos baseado em IA: o estudante informa um tema, o sistema busca fontes confiáveis (via web search ou fontes enviadas pelo próprio estudante), gera um resumo citando essas fontes e, ao final, gera um questionário com gabarito para testar o entendimento — com correção automática. A partir desse núcleo, o assistente evolui em "personas" ao longo das sprints: um <b>Mentor</b> que recomenda o próximo tema com base no desempenho, um <b>Assistente</b> para tirar dúvidas em chat, e um <b>Avaliador</b> que dá feedback mais aprofundado sobre o progresso. O engajamento é reforçado por gamificação (XP, níveis, streak e conquistas). O núcleo (tema → fontes → resumo → questionário) é propositalmente genérico, validado no contexto de preparação para o vestibular, mas pensado para ser adaptado a outros domínios de aprendizado sem reconstrução completa da aplicação.</p>
+
+---
+
+## 🧩 Personas e Adaptabilidade
+
+O requisito do parceiro é claro: a solução precisa ser validada em um contexto real (aqui, **Vestibular**), mas o núcleo do assistente deve ser adaptável a outros domínios (ex.: Redação do ENEM, Culinária, Idiomas) **sem reconstrução completa da aplicação**.
+
+Para isso, o CHATin separa duas camadas:
+- **Núcleo (domain-agnostic):** tema → busca de fontes → resumo com IA → questionário + gabarito → correção. Não depende de nenhuma regra específica de vestibular.
+- **Personas (Mentor, Assistente, Avaliador):** camada configurável por domínio/trilha — implementada como agentes de IA configuráveis (sugestão: **Google ADK — Agent Development Kit**), reaproveitando o mesmo núcleo. Trocar de domínio (ex.: de Vestibular para Idiomas) significa reconfigurar a persona/trilha, não reescrever o núcleo.
+
+> Essa separação está refletida nas Regras de Negócio das User Stories de persona (US06 — Mentor, US08 — Assistente, US11 — Avaliador) no [DoR](docs/DoR_CHATin.pdf).
 
 ---
 
@@ -84,12 +96,14 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 
 | Tecnologia | Finalidade |
 |:----------:|------------|
-| [PREENCHER] | Frontend / App |
-| [PREENCHER] | Backend / API |
-| [PREENCHER] | Banco de Dados |
-| [PREENCHER] | Provedor de IA / PLN |
-| [PREENCHER] | Design de interfaces e prototipação |
-| [PREENCHER] | Empacotamento / Deploy |
+| ![A definir](https://img.shields.io/badge/A%20definir-lightgrey?style=for-the-badge) | Frontend / App |
+| ![A definir](https://img.shields.io/badge/A%20definir-lightgrey?style=for-the-badge) | Backend / API |
+| ![A definir](https://img.shields.io/badge/A%20definir-lightgrey?style=for-the-badge) | Banco de Dados |
+| ![A definir](https://img.shields.io/badge/A%20definir-lightgrey?style=for-the-badge) | Provedor de IA / PLN |
+| ![A definir](https://img.shields.io/badge/A%20definir-lightgrey?style=for-the-badge) | Design de interfaces e prototipação |
+| ![A definir](https://img.shields.io/badge/A%20definir-lightgrey?style=for-the-badge) | Empacotamento / Deploy |
+
+> Assim que a stack for definida, trocar cada badge pelo padrão usado nos projetos anteriores, ex.: `![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)`.
 
 ---
 
@@ -97,7 +111,7 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 - **Main** — Estado principal que armazena a versão estável do projeto
 - **Dev** — Estado de desenvolvimento atual
 
-### ⏳ Status do projeto: 0/3 Sprints
+### ⬜ Status do projeto: 0/3 Sprints
 
 ---
 
@@ -143,20 +157,19 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 
 | RF | Nome | Descritivo |
 |----|------|------------|
-| RF1 | Cadastro e Login | O sistema deve permitir que o estudante crie uma conta e faça login para acessar sua jornada. |
-| RF2 | Definição de Objetivo | O sistema deve permitir informar o vestibular/curso alvo e a data da prova. |
-| RF3 | Diagnóstico Inicial | O sistema deve aplicar um teste diagnóstico para identificar o nível atual do estudante por matéria. |
-| RF4 | Jornada Personalizada | O sistema deve gerar uma trilha de estudos personalizada com base no diagnóstico e no objetivo informado. |
-| RF5 | Atividades/Missões | O sistema deve propor atividades ou missões diárias/periódicas ao estudante. |
-| RF6 | Registro de Desempenho | O sistema deve registrar as respostas e o desempenho do estudante em cada atividade. |
-| RF7 | Feedback Personalizado | O sistema deve gerar, via IA, um feedback personalizado sobre o desempenho do estudante. |
-| RF8 | Gamificação — XP e Níveis | O sistema deve conceder XP e níveis com base no progresso do estudante. |
-| RF9 | Gamificação — Mecânica Extra | O sistema deve implementar ao menos uma mecânica adicional de gamificação (streak de dias e/ou conquistas). |
-| RF10 | Dashboard de Progresso | O sistema deve exibir um painel com a evolução do estudante ao longo do tempo. |
-| RF11 | Chat com o Assistente | O sistema deve permitir que o estudante converse com o assistente virtual para tirar dúvidas e receber orientação. |
-| RF12 | Histórico de Atividades | O sistema deve manter um histórico consultável das atividades e resultados anteriores. |
-| RF13 | Jornada Adaptativa | O sistema deve ajustar a dificuldade/sequência das atividades com base no desempenho recente do estudante. |
-| RF14 | Gestão de Conteúdo | O sistema deve permitir o cadastro/manutenção de matérias, tópicos e questões usados na jornada. |
+| RF1 | Definição de Tema de Estudo | O sistema deve permitir que o estudante informe livremente um tema/assunto que deseja estudar. |
+| RF2 | Busca de Fontes | O sistema deve buscar fontes sobre o tema (web search) ou aceitar fontes enviadas pelo estudante. |
+| RF3 | Geração de Resumo com IA | O sistema deve gerar um resumo do tema com base nas fontes, citando-as. |
+| RF4 | Geração de Questionário e Gabarito | O sistema deve gerar um questionário com gabarito a partir do resumo gerado. |
+| RF5 | Correção do Questionário | O sistema deve corrigir automaticamente as respostas do estudante comparando com o gabarito. |
+| RF6 | Persona Mentor | O sistema deve recomendar o próximo tema de estudo com base no desempenho do estudante. |
+| RF7 | Persona Assistente (Chat) | O sistema deve permitir que o estudante converse com o assistente para tirar dúvidas sobre o tema. |
+| RF8 | Persona Avaliador | O sistema deve gerar uma avaliação aprofundada sobre pontos fortes e fracos do estudante. |
+| RF9 | Registro de Desempenho | O sistema deve registrar o resultado de cada questionário respondido pelo estudante. |
+| RF10 | Dashboard de Progresso | O sistema deve exibir um painel com XP, nível, streak e temas estudados pelo estudante. |
+| RF11 | Gamificação — XP e Níveis | O sistema deve conceder XP e níveis com base no desempenho nos questionários. |
+| RF12 | Gamificação — Mecânica Extra | O sistema deve implementar ao menos uma mecânica adicional de gamificação (streak e/ou conquistas). |
+| RF13 | Jornada Adaptativa | O sistema deve ajustar os próximos temas/questionários com base no desempenho recente do estudante. |
 
 ### Requisitos Não Funcionais
 
@@ -170,6 +183,7 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 | RNF6 | Resiliência à Falha de IA | A aplicação deve continuar funcional (missões, XP, progresso, dashboard) mesmo com a IA indisponível ou cota esgotada. |
 | RNF7 | Controle de Consumo de IA | O sistema deve registrar e exibir o consumo de IA (nº de chamadas e, quando disponível, tokens). |
 | RNF8 | Redução de Consumo de IA | O sistema deve aplicar ao menos uma estratégia de redução de consumo (ex.: memória resumida do estudante em vez de reenviar histórico completo). |
+| RNF9 | Arquitetura de Personas Configuráveis | As personas (Mentor, Assistente, Avaliador) devem ser implementadas de forma configurável por domínio/trilha (sugestão: Google ADK — Agent Development Kit), reaproveitando o núcleo de resumo e questionário sem exigir reescrevê-lo para cada novo domínio. |
 
 ---
 
@@ -191,85 +205,83 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 
 | RANK | SPRINT | PRIORIDADE | ESTIMATIVA | USER STORY | RF | STATUS |
 |:----:|:------:|:----------:|:----------:|------------|:--:|:------:|
-| 1 | 1 | Baixa | 3 | Como estudante, quero criar uma conta e fazer login, para acessar minha jornada de estudos de forma segura. | RF1 | ❌ |
-| 2 | 1 | Alta | 5 | Como estudante, quero informar meu curso/vestibular alvo e a data da prova, para que o assistente monte uma jornada adequada ao meu prazo. | RF2 | ❌ |
-| 3 | 1 | Alta | 5 | Como administrador, quero cadastrar matérias, tópicos e questões, para alimentar a base de conteúdo usada na jornada dos estudantes. | RF14 | ❌ |
-| 4 | 1 | Alta | 8 | Como estudante, quero responder um teste diagnóstico inicial, para que o sistema identifique meu nível atual em cada matéria. | RF3 | ❌ |
-| 5 | 1 | Alta | 8 | Como estudante, quero receber uma jornada de estudos personalizada com base no meu diagnóstico e objetivo, para saber por onde começar. | RF4 | ❌ |
-| 6 | 1 | Média | 5 | Como estudante, quero visualizar meu nível e XP desde o início, para acompanhar minha evolução ao longo do tempo. | RF8 | ❌ |
-| 7 | 2 | Alta | 8 | Como estudante, quero receber atividades/missões sugeridas pelo assistente, para manter uma rotina de estudos consistente. | RF5 | ❌ |
-| 8 | 2 | Alta | 5 | Como estudante, quero que minhas respostas e desempenho em cada atividade sejam registrados, para que meu progresso não se perca. | RF6 | ❌ |
-| 9 | 2 | Alta | 8 | Como estudante, quero receber feedback personalizado sobre meu desempenho, para entender meus pontos fortes e o que preciso melhorar. | RF7 | ❌ |
-| 10 | 2 | Alta | 8 | Como estudante, quero conversar com o assistente virtual para tirar dúvidas sobre a jornada, para não ficar perdido no processo de estudo. | RF11 | ❌ |
-| 11 | 2 | Média | 5 | Como estudante, quero manter uma sequência de dias de estudo (streak) e desbloquear conquistas, para me sentir motivado a continuar. | RF9 | ❌ |
-| 12 | 2 | Alta | 5 | Como estudante, quero que missões, XP e progresso continuem funcionando mesmo se a IA estiver indisponível, para não travar meus estudos. | RNF6 | ❌ |
-| 13 | 3 | Alta | 8 | Como estudante, quero acessar um dashboard com meu progresso e evolução, para visualizar meu avanço rumo ao objetivo. | RF10 | ❌ |
-| 14 | 3 | Média | 5 | Como estudante, quero consultar o histórico de atividades e resultados anteriores, para revisar meu desempenho passado. | RF12 | ❌ |
-| 15 | 3 | Média | 8 | Como estudante, quero que minha jornada se ajuste automaticamente conforme meu desempenho, para receber atividades no nível de dificuldade certo. | RF13 | ❌ |
-| 16 | 3 | Alta | 5 | Como administrador, quero visualizar o consumo de chamadas e tokens de IA, para controlar custo e uso do recurso. | RNF7 | ❌ |
-| 17 | 3 | Alta | 5 | Como estudante, quero que o assistente use um resumo da minha jornada em vez do histórico completo, para que o sistema economize consumo de IA sem perder contexto relevante. | RNF8 | ❌ |
+| 1 | 1 | Alta | 5 | Como estudante, quero informar um tema/assunto que desejo estudar, para que o sistema saiba sobre o que gerar conteúdo. | RF1 | ⬜ |
+| 2 | 1 | Alta | 8 | Como estudante, quero que o sistema busque fontes confiáveis sobre o tema informado (ou aceite fontes que eu enviar), para que o conteúdo gerado seja embasado. | RF2 | ⬜ |
+| 3 | 1 | Alta | 8 | Como estudante, quero receber um resumo gerado por IA do tema estudado, com as fontes utilizadas indicadas, para entender o conteúdo rapidamente e poder verificar a origem das informações. | RF3 | ⬜ |
+| 4 | 1 | Alta | 8 | Como estudante, quero receber um questionário gerado automaticamente ao final do resumo, com gabarito, para testar meu entendimento do tema. | RF4 | ⬜ |
+| 5 | 1 | Alta | 5 | Como estudante, quero responder o questionário pelo aplicativo e ver meu resultado corrigido automaticamente, para saber o que acertei e errei. | RF5 | ⬜ |
+| 6 | 2 | Alta | 8 | Como estudante, quero que o assistente (persona Mentor) sugira o próximo tema de estudo com base no meu desempenho nos questionários, para saber o que estudar em seguida. | RF6 | ⬜ |
+| 7 | 2 | Alta | 5 | Como estudante, quero que meu desempenho em cada questionário seja registrado, para acompanhar minha evolução ao longo do tempo. | RF9 | ⬜ |
+| 8 | 2 | Alta | 8 | Como estudante, quero conversar com o assistente (persona Assistente) para tirar dúvidas sobre o tema estudado, para aprofundar meu entendimento. | RF7 | ⬜ |
+| 9 | 2 | Média | 5 | Como estudante, quero ganhar XP e subir de nível a cada questionário concluído, para acompanhar minha evolução de forma gamificada. | RF11 | ⬜ |
+| 10 | 2 | Alta | 5 | Como estudante, quero que meu registro de desempenho e a jornada do Mentor continuem funcionando mesmo se a IA estiver indisponível, para não travar meus estudos. | RNF6 | ⬜ |
+| 11 | 3 | Alta | 8 | Como estudante, quero receber uma avaliação mais aprofundada (persona Avaliador) sobre meus pontos fortes e fracos ao final de um ciclo de estudos, para entender melhor meu progresso. | RF8 | ⬜ |
+| 12 | 3 | Média | 8 | Como estudante, quero que os próximos temas/questionários se ajustem automaticamente ao meu desempenho, para receber conteúdo no nível de dificuldade certo. | RF13 | ⬜ |
+| 13 | 3 | Alta | 8 | Como estudante, quero acessar um dashboard com meu progresso, XP e histórico de temas estudados, para visualizar minha evolução. | RF10 | ⬜ |
+| 14 | 3 | Média | 5 | Como estudante, quero manter uma sequência de dias de estudo (streak) e desbloquear conquistas, para me sentir motivado a continuar. | RF12 | ⬜ |
+| 15 | 3 | Alta | 5 | Como administrador, quero visualizar o consumo de chamadas e tokens de IA, para controlar custo e uso do recurso. | RNF7 | ⬜ |
+| 16 | 3 | Alta | 5 | Como estudante, quero que o assistente use um resumo do meu histórico em vez de reenviar tudo para a IA a cada interação, para economizar consumo sem perder contexto relevante. | RNF8 | ⬜ |
 
 ---
 
 ## 📝 Sprint Backlog <a name="backsprint"></a>
 
 <details>
-<summary><strong>Sprint 1 — Onboarding, Diagnóstico e Jornada Inicial</strong></summary>
+<summary><strong>Sprint 1 — Núcleo: Resumo e Questionário com IA</strong></summary>
 
 <br>
 
 > **Período:** 07/09/2026 à 27/09/2026
-> **Foco:** O estudante consegue se cadastrar, definir seu objetivo, fazer o diagnóstico inicial e receber uma jornada de estudos personalizada.
+> **Foco:** O estudante informa um tema de estudo, o sistema busca fontes (via web search ou fontes enviadas), gera um resumo citando as fontes e, ao final, gera um questionário com gabarito que o estudante responde e tem corrigido automaticamente.
 
 | RANK | PRIORIDADE | ESTIMATIVA | USER STORY | RF | STATUS |
 |:----:|:----------:|:----------:|------------|:--:|:------:|
-| 1 | Baixa | 3 | Como estudante, quero criar uma conta e fazer login, para acessar minha jornada de estudos de forma segura. | RF1 | ❌ |
-| 2 | Alta | 5 | Como estudante, quero informar meu curso/vestibular alvo e a data da prova, para que o assistente monte uma jornada adequada ao meu prazo. | RF2 | ❌ |
-| 3 | Alta | 5 | Como administrador, quero cadastrar matérias, tópicos e questões, para alimentar a base de conteúdo usada na jornada dos estudantes. | RF14 | ❌ |
-| 4 | Alta | 8 | Como estudante, quero responder um teste diagnóstico inicial, para que o sistema identifique meu nível atual em cada matéria. | RF3 | ❌ |
-| 5 | Alta | 8 | Como estudante, quero receber uma jornada de estudos personalizada com base no meu diagnóstico e objetivo, para saber por onde começar. | RF4 | ❌ |
-| 6 | Média | 5 | Como estudante, quero visualizar meu nível e XP desde o início, para acompanhar minha evolução ao longo do tempo. | RF8 | ❌ |
+| 1 | Alta | 5 | Como estudante, quero informar um tema/assunto que desejo estudar, para que o sistema saiba sobre o que gerar conteúdo. | RF1 | ⬜ |
+| 2 | Alta | 8 | Como estudante, quero que o sistema busque fontes confiáveis sobre o tema informado (ou aceite fontes que eu enviar), para que o conteúdo gerado seja embasado. | RF2 | ⬜ |
+| 3 | Alta | 8 | Como estudante, quero receber um resumo gerado por IA do tema estudado, com as fontes utilizadas indicadas, para entender o conteúdo rapidamente e poder verificar a origem das informações. | RF3 | ⬜ |
+| 4 | Alta | 8 | Como estudante, quero receber um questionário gerado automaticamente ao final do resumo, com gabarito, para testar meu entendimento do tema. | RF4 | ⬜ |
+| 5 | Alta | 5 | Como estudante, quero responder o questionário pelo aplicativo e ver meu resultado corrigido automaticamente, para saber o que acertei e errei. | RF5 | ⬜ |
 
 </details>
 
 ---
 
 <details>
-<summary><strong>Sprint 2 — Engajamento, Feedback e Resiliência de IA</strong></summary>
+<summary><strong>Sprint 2 — Personas: Mentor e Assistente</strong></summary>
 
 <br>
 
 > **Período:** 05/10/2026 à 25/10/2026
-> **Foco:** O estudante cumpre missões, tem seu desempenho registrado, recebe feedback via IA, tira dúvidas no chat e se mantém engajado por gamificação — com o sistema resiliente caso a IA falhe.
+> **Foco:** O sistema passa a orientar o estudante numa jornada de recomendações (persona Mentor), oferece um chat de dúvidas (persona Assistente), registra desempenho e traz gamificação básica — com resiliência caso a IA falhe.
 
 | RANK | PRIORIDADE | ESTIMATIVA | USER STORY | RF | STATUS |
 |:----:|:----------:|:----------:|------------|:--:|:------:|
-| 7 | Alta | 8 | Como estudante, quero receber atividades/missões sugeridas pelo assistente, para manter uma rotina de estudos consistente. | RF5 | ❌ |
-| 8 | Alta | 5 | Como estudante, quero que minhas respostas e desempenho em cada atividade sejam registrados, para que meu progresso não se perca. | RF6 | ❌ |
-| 9 | Alta | 8 | Como estudante, quero receber feedback personalizado sobre meu desempenho, para entender meus pontos fortes e o que preciso melhorar. | RF7 | ❌ |
-| 10 | Alta | 8 | Como estudante, quero conversar com o assistente virtual para tirar dúvidas sobre a jornada, para não ficar perdido no processo de estudo. | RF11 | ❌ |
-| 11 | Média | 5 | Como estudante, quero manter uma sequência de dias de estudo (streak) e desbloquear conquistas, para me sentir motivado a continuar. | RF9 | ❌ |
-| 12 | Alta | 5 | Como estudante, quero que missões, XP e progresso continuem funcionando mesmo se a IA estiver indisponível, para não travar meus estudos. | RNF6 | ❌ |
+| 6 | Alta | 8 | Como estudante, quero que o assistente (persona Mentor) sugira o próximo tema de estudo com base no meu desempenho nos questionários, para saber o que estudar em seguida. | RF6 | ⬜ |
+| 7 | Alta | 5 | Como estudante, quero que meu desempenho em cada questionário seja registrado, para acompanhar minha evolução ao longo do tempo. | RF9 | ⬜ |
+| 8 | Alta | 8 | Como estudante, quero conversar com o assistente (persona Assistente) para tirar dúvidas sobre o tema estudado, para aprofundar meu entendimento. | RF7 | ⬜ |
+| 9 | Média | 5 | Como estudante, quero ganhar XP e subir de nível a cada questionário concluído, para acompanhar minha evolução de forma gamificada. | RF11 | ⬜ |
+| 10 | Alta | 5 | Como estudante, quero que meu registro de desempenho e a jornada do Mentor continuem funcionando mesmo se a IA estiver indisponível, para não travar meus estudos. | RNF6 | ⬜ |
 
 </details>
 
 ---
 
 <details>
-<summary><strong>Sprint 3 — Consolidação, Adaptação e Governança de IA</strong></summary>
+<summary><strong>Sprint 3 — Persona Avaliador e Consolidação</strong></summary>
 
 <br>
 
 > **Período:** 02/11/2026 à 22/11/2026
-> **Foco:** O estudante visualiza sua evolução completa e histórico, a jornada se adapta ao desempenho, e a equipe garante controle/redução de consumo de IA.
+> **Foco:** O sistema ganha uma persona Avaliador com feedback mais aprofundado, a jornada se ajusta ao desempenho, o estudante acompanha tudo num dashboard, com gamificação extra e governança de consumo de IA.
 
 | RANK | PRIORIDADE | ESTIMATIVA | USER STORY | RF | STATUS |
 |:----:|:----------:|:----------:|------------|:--:|:------:|
-| 13 | Alta | 8 | Como estudante, quero acessar um dashboard com meu progresso e evolução, para visualizar meu avanço rumo ao objetivo. | RF10 | ❌ |
-| 14 | Média | 5 | Como estudante, quero consultar o histórico de atividades e resultados anteriores, para revisar meu desempenho passado. | RF12 | ❌ |
-| 15 | Média | 8 | Como estudante, quero que minha jornada se ajuste automaticamente conforme meu desempenho, para receber atividades no nível de dificuldade certo. | RF13 | ❌ |
-| 16 | Alta | 5 | Como administrador, quero visualizar o consumo de chamadas e tokens de IA, para controlar custo e uso do recurso. | RNF7 | ❌ |
-| 17 | Alta | 5 | Como estudante, quero que o assistente use um resumo da minha jornada em vez do histórico completo, para que o sistema economize consumo de IA sem perder contexto relevante. | RNF8 | ❌ |
+| 11 | Alta | 8 | Como estudante, quero receber uma avaliação mais aprofundada (persona Avaliador) sobre meus pontos fortes e fracos ao final de um ciclo de estudos, para entender melhor meu progresso. | RF8 | ⬜ |
+| 12 | Média | 8 | Como estudante, quero que os próximos temas/questionários se ajustem automaticamente ao meu desempenho, para receber conteúdo no nível de dificuldade certo. | RF13 | ⬜ |
+| 13 | Alta | 8 | Como estudante, quero acessar um dashboard com meu progresso, XP e histórico de temas estudados, para visualizar minha evolução. | RF10 | ⬜ |
+| 14 | Média | 5 | Como estudante, quero manter uma sequência de dias de estudo (streak) e desbloquear conquistas, para me sentir motivado a continuar. | RF12 | ⬜ |
+| 15 | Alta | 5 | Como administrador, quero visualizar o consumo de chamadas e tokens de IA, para controlar custo e uso do recurso. | RNF7 | ⬜ |
+| 16 | Alta | 5 | Como estudante, quero que o assistente use um resumo do meu histórico em vez de reenviar tudo para a IA a cada interação, para economizar consumo sem perder contexto relevante. | RNF8 | ⬜ |
 
 </details>
 

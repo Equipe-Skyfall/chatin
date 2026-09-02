@@ -2,10 +2,9 @@
 
 | RANK | SPRINT | PRIORIDADE | ESTIMATIVA | USER STORY (NOME) | STATUS |
 |:----:|:------:|:----------:|:----------:|:-------------------------------------------------------------:|:------:|
-| 7 | 2 | Alta | 8 | Como estudante, quero receber atividades/missões sugeridas pelo assistente, para manter uma rotina de estudos consistente. | ❌ |
-| 8 | 2 | Alta | 5 | Como estudante, quero que minhas respostas e desempenho em cada atividade sejam registrados, para que meu progresso não se perca. | ❌ |
-| 9 | 2 | Alta | 8 | Como estudante, quero receber feedback personalizado sobre meu desempenho, para entender meus pontos fortes e o que preciso melhorar. | ❌ |
-| 10 | 2 | Alta | 8 | Como estudante, quero conversar com o assistente virtual para tirar dúvidas sobre a jornada, para não ficar perdido no processo de estudo. | ❌ |
-| 11 | 2 | Média | 5 | Como estudante, quero manter uma sequência de dias de estudo (streak) e desbloquear conquistas, para me sentir motivado a continuar. | ❌ |
-| 12 | 2 | Alta | 5 | Como estudante, quero que missões, XP e progresso continuem funcionando mesmo se a IA estiver indisponível, para não travar meus estudos. | ❌ |
+| 6 | 2 | Alta | 8 | Como estudante, quero que o assistente (persona Mentor) sugira o próximo tema de estudo com base no meu desempenho nos questionários, para saber o que estudar em seguida. | ⬜ |
+| 7 | 2 | Alta | 5 | Como estudante, quero que meu desempenho em cada questionário seja registrado, para acompanhar minha evolução ao longo do tempo. | ⬜ |
+| 8 | 2 | Alta | 8 | Como estudante, quero conversar com o assistente (persona Assistente) para tirar dúvidas sobre o tema estudado, para aprofundar meu entendimento. | ⬜ |
+| 9 | 2 | Média | 5 | Como estudante, quero ganhar XP e subir de nível a cada questionário concluído, para acompanhar minha evolução de forma gamificada. | ⬜ |
+| 10 | 2 | Alta | 5 | Como estudante, quero que meu registro de desempenho e a jornada do Mentor continuem funcionando mesmo se a IA estiver indisponível, para não travar meus estudos. | ⬜ |
 ---

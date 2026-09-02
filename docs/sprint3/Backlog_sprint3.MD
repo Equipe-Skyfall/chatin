@@ -2,9 +2,10 @@
 
 | RANK | SPRINT | PRIORIDADE | ESTIMATIVA | USER STORY (NOME) | STATUS |
 |:----:|:------:|:----------:|:----------:|:-------------------------------------------------------------:|:------:|
-| 13 | 3 | Alta | 8 | Como estudante, quero acessar um dashboard com meu progresso e evolução, para visualizar meu avanço rumo ao objetivo. | ❌ |
-| 14 | 3 | Média | 5 | Como estudante, quero consultar o histórico de atividades e resultados anteriores, para revisar meu desempenho passado. | ❌ |
-| 15 | 3 | Média | 8 | Como estudante, quero que minha jornada se ajuste automaticamente conforme meu desempenho, para receber atividades no nível de dificuldade certo. | ❌ |
-| 16 | 3 | Alta | 5 | Como administrador, quero visualizar o consumo de chamadas e tokens de IA, para controlar custo e uso do recurso. | ❌ |
-| 17 | 3 | Alta | 5 | Como estudante, quero que o assistente use um resumo da minha jornada em vez do histórico completo, para que o sistema economize consumo de IA sem perder contexto relevante. | ❌ |
+| 11 | 3 | Alta | 8 | Como estudante, quero receber uma avaliação mais aprofundada (persona Avaliador) sobre meus pontos fortes e fracos ao final de um ciclo de estudos, para entender melhor meu progresso. | ⬜ |
+| 12 | 3 | Média | 8 | Como estudante, quero que os próximos temas/questionários se ajustem automaticamente ao meu desempenho, para receber conteúdo no nível de dificuldade certo. | ⬜ |
+| 13 | 3 | Alta | 8 | Como estudante, quero acessar um dashboard com meu progresso, XP e histórico de temas estudados, para visualizar minha evolução. | ⬜ |
+| 14 | 3 | Média | 5 | Como estudante, quero manter uma sequência de dias de estudo (streak) e desbloquear conquistas, para me sentir motivado a continuar. | ⬜ |
+| 15 | 3 | Alta | 5 | Como administrador, quero visualizar o consumo de chamadas e tokens de IA, para controlar custo e uso do recurso. | ⬜ |
+| 16 | 3 | Alta | 5 | Como estudante, quero que o assistente use um resumo do meu histórico em vez de reenviar tudo para a IA a cada interação, para economizar consumo sem perder contexto relevante. | ⬜ |
 ---
