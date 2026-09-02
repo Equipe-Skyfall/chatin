@@ -1,0 +1,6 @@
+[submodule "chatin-front"]
+	path = chatin-front
+	url = https://github.com/Equipe-Skyfall/chatin-front.git
+[submodule "chatin-back"]
+	path = chatin-back
+	url = https://github.com/Equipe-Skyfall/chatin-back.git
