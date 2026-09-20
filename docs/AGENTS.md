@@ -1,29 +1,12 @@
 # AGENTS.md — CHATin
 
-Este arquivo é o "README para agentes": contexto e convenções que qualquer agente de codificação (Claude Code, Cursor, Copilot, Codex etc.) deve seguir ao trabalhar neste repositório. Complementa o `README.md` (que é para humanos) e o `DESIGN.md` (que descreve a identidade visual).
+Este arquivo é o "README para agentes": contexto e convenções **comuns aos dois repositórios** (`chatin-back`, `chatin-front`) que qualquer agente de codificação (Claude Code, Cursor, Copilot, Codex etc.) deve seguir. Complementa o `README.md` (que é para humanos).
+
+Stack, bibliotecas, segurança/ambiente e identidade visual são específicos de cada lado e vivem em `chatin-front/docs/` e `chatin-back/docs/` — leia o `AGENTS.md` de dentro do repo em que você está trabalhando, além deste.
 
 ## Visão geral do projeto
 
 CHATin é um coach de estudos baseado em IA: o estudante conversa livremente com um assistente, que reconhece a matéria/tópico discutido, gera resumos, cria questionários e acompanha o progresso ao longo do tempo. Ver `README.md` para o backlog completo e `docs/DoR_CHATin.pdf` para critérios de aceitação.
-
-## Stack
-
-| Camada | Tecnologia |
-|---|---|
-| Frontend | Next.js, Tailwind CSS, Lucide (ícones) |
-| Backend | Python, FastAPI |
-| Banco de dados | PostgreSQL |
-| IA / PLN | Gemini |
-| Design | Figma |
-| Deploy | Vercel |
-
-Não adicione uma nova biblioteca sem antes verificar se uma das já escolhidas resolve o problema. Se for realmente necessária, justifique no PR.
-
-## Ambiente e segurança
-
-- Segredos (chaves de API, credenciais de banco) ficam **somente** em variáveis de ambiente (`.env`, não commitado). Nunca hardcode uma chave no código, mesmo "temporariamente".
-- Ao gerar código que chama a IA (Gemini), sempre trate o caso de falha/indisponibilidade sem quebrar o restante da aplicação (ver RNF6 no DoR).
-- Toda chamada à IA deve poder ser contabilizada (RNF7) — não crie chamadas "soltas" fora do mecanismo de registro de consumo.
 
 ## Padrão de commits
 
@@ -52,7 +35,7 @@ Branches: `main` (estável) e `dev` (desenvolvimento). Nunca commitar direto na 
 - **Descrição obrigatória com 3 seções:**
   - `O que mudou` — resumo objetivo.
   - `Como testar` — passos manuais ou comando de teste automatizado.
-  - `Screenshots` — obrigatório para qualquer mudança visual (comparar com `DESIGN.md`).
+  - `Screenshots` — obrigatório para qualquer mudança visual (comparar com `chatin-front/docs/DESIGN.md`).
 - PR pequeno e focado em uma única User Story ou Task sempre que possível.
 - Nenhum PR é aprovado pelo próprio autor — sempre precisa de revisão de outra pessoa antes do merge (ver `Guia do GitHub` da API).
 
@@ -68,17 +51,10 @@ Usar o padrão [Conventional Comments](https://conventionalcomments.org/) para d
 
 Exemplo: `suggestion: extrair essa lógica de cálculo de XP para uma função separada, facilita testar isoladamente.`
 
-## Padrão de testes
+## Padrão de testes (princípios gerais)
 
-> A estratégia de testes ainda não foi formalizada pela equipe (item em aberto no checklist do DoR). Até que isso seja decidido, siga esta convenção mínima:
+> A estratégia de testes ainda não foi formalizada pela equipe (item em aberto no checklist do DoR). Até que isso seja decidido, siga esta convenção mínima — as ferramentas usadas em cada lado (pytest, Vitest...) estão documentadas no `AGENTS.md` de cada repo:
 
 - Regras determinísticas (cálculo de XP, streak, correção automática de questionário, avanço/reforço de módulo) **devem ter teste unitário** — são lógica pura da aplicação, não dependem da IA, e são baratas de testar.
 - Chamadas à IA (geração de resumo, geração de questionário, chat) não precisam de teste de conteúdo gerado, mas devem ter teste do comportamento de fallback (o que acontece quando a IA falha/está indisponível).
-- Backend: `pytest`. Frontend: `Vitest` + `Testing Library`.
 - Todo teste deve poder rodar localmente sem depender de uma chave de API real (usar mocks para chamadas ao Gemini).
-
-## Uso do DESIGN.md
-
-Qualquer código de interface (componentes, telas, estilos) deve seguir os tokens definidos em `DESIGN.md` (cores, tipografia, espaçamento, raio de borda). Antes de escrever uma classe Tailwind com uma cor ou tamanho "solto", verifique se já existe um token equivalente no `DESIGN.md`.
-
-Se uma tela nova exigir algo que o `DESIGN.md` ainda não cobre (uma cor nova, um componente novo), **atualize o `DESIGN.md` primeiro**, em um commit `DOCS`, e só depois implemente a tela usando esse novo token. Isso mantém o arquivo como fonte única de verdade da identidade visual, em vez de cada tela inventar seu próprio estilo.
