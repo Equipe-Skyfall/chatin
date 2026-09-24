@@ -51,6 +51,8 @@ Usar o padrão [Conventional Comments](https://conventionalcomments.org/) para d
 
 Exemplo: `suggestion: extrair essa lógica de cálculo de XP para uma função separada, facilita testar isoladamente.`
 
+**Todo review (de agente ou de humano) tem que deixar os achados como comentário na PR** — nunca só relatar no chat/terminal e seguir em frente. Um review que não vira comentário na PR não existe pro resto do time nem fica registrado quando a PR for revisitada depois. Isso vale tanto pra achados que bloqueiam o merge (`issue:`) quanto pra sugestões não-bloqueantes (`suggestion:`, `nit:`).
+
 ## Padrão de testes (princípios gerais)
 
 > A estratégia de testes ainda não foi formalizada pela equipe (item em aberto no checklist do DoR). Até que isso seja decidido, siga esta convenção mínima — as ferramentas usadas em cada lado (pytest, Vitest...) estão documentadas no `AGENTS.md` de cada repo:
