@@ -94,7 +94,7 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 - **Main** — Estado principal que armazena a versão estável do projeto
 - **Dev** — Estado de desenvolvimento atual
 
-### ⬜ Status do projeto: 0/3 Sprints
+### ⬜ Status do projeto: 1/3 Sprints
 
 ---
 
