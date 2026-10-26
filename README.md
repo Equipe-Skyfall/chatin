@@ -130,7 +130,7 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 **HOTFIX**: Corrige um bug crítico em produção de forma urgente.
 > Exemplo: `HOTFIX - Corrige vazamento de chave de API no cliente`
 
-> **Nomenclatura de variáveis:** padrão `camelCase` (ex: `nomeCompleto`).
+> **Nomenclatura de variáveis:** segue a convenção de cada linguagem — `camelCase` no front-end, TypeScript (ex: `nomeCompleto`), e `snake_case` no back-end, Python/PEP 8 (ex: `nome_completo`).
 
 ---
 
@@ -216,7 +216,7 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 
 ## 📝 Sprint Backlog <a name="backsprint"></a>
 
-> Os Critérios de Aceitação abaixo também estão detalhados, junto das Regras de Negócio, no [DoR (PDF)](docs/DoR_CHATin.pdf).
+> Os Critérios de Aceitação abaixo também estão detalhados, junto das Regras de Negócio, no [DoR (PDF)](docs/DoR_CHATin.pdf). O que define uma Task como concluída está no [DoD (PDF)](docs/DoD_CHATin.pdf).
 
 <details>
 <summary><strong>Sprint 1 — Núcleo: Chat, Reconhecimento de Tópico e Questionário</strong></summary>

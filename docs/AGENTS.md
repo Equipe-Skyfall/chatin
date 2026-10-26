@@ -37,7 +37,7 @@ Branches: `main` (estável) e `dev` (desenvolvimento). Nunca commitar direto na 
   - `Como testar` — passos manuais ou comando de teste automatizado.
   - `Screenshots` — obrigatório para qualquer mudança visual (comparar com `chatin-front/docs/DESIGN.md`).
 - PR pequeno e focado em uma única User Story ou Task sempre que possível.
-- Nenhum PR é aprovado pelo próprio autor — sempre precisa de revisão de outra pessoa antes do merge (ver `Guia do GitHub` da API).
+- Nenhum PR é aprovado pelo próprio autor — sempre precisa de revisão de outra pessoa antes do merge.
 
 ## Padrão de comentários em review de PR
 
@@ -55,7 +55,7 @@ Exemplo: `suggestion: extrair essa lógica de cálculo de XP para uma função s
 
 ## Padrão de testes (princípios gerais)
 
-> A estratégia de testes ainda não foi formalizada pela equipe (item em aberto no checklist do DoR). Até que isso seja decidido, siga esta convenção mínima — as ferramentas usadas em cada lado (pytest, Vitest...) estão documentadas no `AGENTS.md` de cada repo:
+Esta é a estratégia de testes do projeto (item "Estratégia de testes definida" do checklist do DoR). As ferramentas de cada lado estão no `AGENTS.md` de cada repo — `pytest` com os fakes de `tests/fakes/` no back, `Vitest` + `Testing Library` no front:
 
 - Regras determinísticas (cálculo de XP, streak, correção automática de questionário, avanço/reforço de módulo) **devem ter teste unitário** — são lógica pura da aplicação, não dependem da IA, e são baratas de testar.
 - Chamadas à IA (geração de resumo, geração de questionário, chat) não precisam de teste de conteúdo gerado, mas devem ter teste do comportamento de fallback (o que acontece quando a IA falha/está indisponível).

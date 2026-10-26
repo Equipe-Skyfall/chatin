@@ -1,0 +1,12 @@
+# Arquivos binários: nunca converter fim de linha (LF/CRLF).
+# Sem isso, o core.autocrlf do Windows corrompe PDFs gerados sem bytes binários
+# (ex.: ReportLab), quebrando a tabela xref.
+*.pdf binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
+*.ico binary
+*.docx binary
+*.pptx binary
+*.xlsx binary
