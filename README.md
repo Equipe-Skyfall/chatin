@@ -17,7 +17,7 @@
 ## 📑 Sumário
 - [Dores do Cliente](#dores)
 - [Visão do Projeto](#visao-do-projeto)
-- [Cronograma do Projeto](#cronograma)
+- [Cronograma de Sprints](#cronograma)
 - [Tecnologias utilizadas](#tecnologias)
 - [Padrões de Commit](#padrao)
 - [Requisitos](#requisitos)
@@ -63,7 +63,7 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 
 ## 👁 Visão do Projeto <a name="visao-do-projeto"></a>
 
-<p>O CHATin é um <b>coach de estudos via chat com IA</b>, com foco inicial em conteúdo do ENEM: o estudante conversa livremente sobre o que está estudando, e o sistema <b>reconhece automaticamente a matéria e o tópico</b> discutidos, dentro de um conjunto fixo de conteúdos do ENEM. A qualquer momento, o estudante pode pedir um <b>resumo</b> da conversa, que fica salvo na <b>Biblioteca</b> — um repositório pessoal e privado. O sistema também gera <b>questionários com gabarito</b> sobre o tópico identificado, corrige as respostas automaticamente, e <b>registra o progresso do estudante por matéria e tópico</b>, usando o resultado do primeiro questionário como referência inicial de desempenho. Nas etapas seguintes, esse histórico passa a ser usado ativamente: os próximos questionários se ajustam à dificuldade que o estudante demonstrar, e o sistema passa a <b>recomendar proativamente</b> o que estudar a seguir. O estudante também ganha uma tela de <b>Matéria Didática</b>, que funciona como uma apostila do conteúdo de cada matéria e passa a ser a tela principal da aplicação, e pode montar suas próprias <b>trilhas de estudo</b> com quizzes. O chat nunca sugere assunto por conta própria — é sempre o estudante quem dá o ponto de partida da conversa.</p>
+<p>O CHATin é um <b>coach de estudos via chat com IA</b>, com foco inicial em conteúdo do ENEM: o estudante conversa livremente sobre o que está estudando, e o sistema <b>reconhece automaticamente a matéria e o tópico</b> discutidos, dentro de um conjunto fixo de conteúdos do ENEM. A qualquer momento, o estudante pode pedir um <b>resumo</b> da conversa, que fica salvo na <b>Biblioteca</b> — um repositório pessoal e privado. O sistema também gera <b>questionários com gabarito</b> sobre o tópico identificado, corrige as respostas automaticamente, e <b>registra o progresso do estudante por matéria e tópico</b>, usando o resultado do primeiro questionário como referência inicial de desempenho. Quando necessário, o chat <b>busca fontes na web</b> e indica de onde tirou cada informação. Esse histórico é usado ativamente: os próximos questionários se ajustam, de forma automática, à dificuldade que o estudante demonstrar, e o sistema <b>recomenda proativamente</b> o que estudar a seguir. Para quem não sabe por onde começar, a tela de <b>Matéria Didática</b> funciona como uma apostila guiada do conteúdo de cada matéria e tópico (organizados do mesmo jeito que o reconhecimento automático do chat) e é a tela principal da aplicação; o estudante também pode montar suas próprias <b>trilhas de estudo</b> com quizzes, que complementam a recomendação do sistema. Para manter o engajamento, o estudante ganha <b>XP</b> e acompanha, na tela de <b>Desempenho</b>, seu streak, a % média de acerto, os cards revisados e o ranking entre estudantes (identificados só por apelido). O <b>administrador</b> acompanha o consumo de IA e mantém o conteúdo da Matéria Didática, com apoio da IA. O chat nunca sugere assunto por conta própria — é sempre o estudante quem dá o ponto de partida da conversa.</p>
 
 ---
 
@@ -72,7 +72,7 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 | Sprint | Período | Status | Relatório |
 |:------:|:-------:|:------:|:---------:|
 | 1 | 07/09/2026 à 27/09/2026 | Concluído | [Ver Relatório](https://github.com/Equipe-Skyfall/chatin/tree/main/docs/sprint1) |
-| 2 | 05/10/2026 à 25/10/2026 | Não iniciado | — |
+| 2 | 05/10/2026 à 25/10/2026 | Concluído | [Ver Relatório](https://github.com/Equipe-Skyfall/chatin/tree/main/docs/sprint2) |
 | 3 | 02/11/2026 à 22/11/2026 | Não iniciado | — |
 
 ---
@@ -94,17 +94,17 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 - **Main** — Estado principal que armazena a versão estável do projeto
 - **Dev** — Estado de desenvolvimento atual
 
-### ⬜ Status do projeto: 1/3 Sprints
+### ⬜ Status do projeto: 2/3 Sprints
 
 ---
 
 ## 💻 Padrões de Commit <a name="padrao"></a>
 
 **FEAT**: Adiciona um novo recurso ou funcionalidade.
-> Exemplo: `FEAT - Adição do diagnóstico inicial`
+> Exemplo: `FEAT - Adição do reconhecimento automático de tópico`
 
 **FIX**: Corrige um bug.
-> Exemplo: `FIX - Corrige o cálculo de XP após atividade`
+> Exemplo: `FIX - Corrige o cálculo de XP após o questionário`
 
 **CHORE**: Atualizações de manutenção que não alteram a lógica de negócio ou visual.
 > Exemplo: `CHORE - Atualização das dependências do Node.js`
@@ -116,13 +116,13 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 > Exemplo: `STYLE - Adiciona comentários no código para facilitar a leitura`
 
 **REFACTOR**: Refatora o código sem adicionar funcionalidades ou corrigir bugs.
-> Exemplo: `REFACTOR - Refatora o serviço de jornada, deixando-o mais legível`
+> Exemplo: `REFACTOR - Refatora o serviço de progresso, deixando-o mais legível`
 
 **TEST**: Adiciona, modifica ou remove testes.
-> Exemplo: `TEST - Adiciona teste para o cálculo de nível`
+> Exemplo: `TEST - Adiciona teste para o cálculo de XP`
 
 **PERF**: Melhora a performance.
-> Exemplo: `PERF - Otimiza a consulta de histórico de atividades`
+> Exemplo: `PERF - Otimiza a consulta de histórico de progresso`
 
 **REVERT**: Reverte um commit anterior.
 > Exemplo: `REVERT - Reverte a adição do cache de respostas da IA`
@@ -151,13 +151,13 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 | RF9 | Ajuste de Dificuldade do Questionário | O sistema deve ajustar a dificuldade dos próximos questionários de um tópico com base no desempenho do estudante ali. |
 | RF10 | Recomendação Proativa de Próximo Passo | O sistema deve usar o histórico de progresso para recomendar ativamente ao estudante o que estudar a seguir. |
 | RF11 | Busca e Citação de Fontes Externas | O sistema deve buscar fontes na web sobre o assunto da conversa e indicar de onde a informação foi retirada. |
-| RF12 | Tela de Matéria Didática | O sistema deve oferecer, como tela principal, uma área de Matéria Didática em que o estudante consulta o conteúdo de cada matéria e tópico em formato de apostila. |
+| RF12 | Tela de Matéria Didática | O sistema deve oferecer, como tela principal, uma área de Matéria Didática em que o estudante consulta o conteúdo de cada matéria e tópico (os mesmos do RF3) em formato de apostila. O conteúdo é mantido pelo administrador com apoio de IA. |
 | RF13 | Gamificação — XP | O sistema deve conceder XP ao estudante a cada questionário concluído. |
 | RF14 | Gamificação — Streak de Estudos | O sistema deve contar a sequência de dias consecutivos em que o estudante respondeu ao menos um questionário. |
 | RF15 | Percentual Médio de Acerto | O sistema deve calcular e exibir a % média de acerto do estudante nos questionários. |
 | RF16 | Ranking entre Usuários | O sistema deve exibir um ranking comparando o XP dos estudantes, identificados por apelido. |
 | RF17 | Contagem de Cards Revisados | O sistema deve contar quantos resumos da Biblioteca o estudante já revisou. |
-| RF18 | Trilha de Estudos | O sistema deve permitir que o estudante crie trilhas de estudo e, ao criá-las, adicione quizzes a elas. |
+| RF18 | Trilha de Estudos | O sistema deve permitir que o estudante crie trilhas de estudo e, ao criá-las, adicione quizzes a elas. As trilhas são criadas pelo próprio estudante e complementam a recomendação do sistema (RF10), sem substituí-la. |
 
 ### Requisitos Não Funcionais
 
@@ -168,7 +168,7 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 | RNF3 | Documentação da API | Documentação dos principais endpoints/integrações da API. |
 | RNF4 | Modelagem de Dados | Modelo do banco de dados ou estrutura de persistência utilizada, documentado. |
 | RNF5 | Segurança de Segredos | Chaves e segredos de APIs externas não podem ficar hardcoded no código-fonte. |
-| RNF6 | Resiliência à Falha de IA | A aplicação deve continuar funcional (Biblioteca, resumos salvos, desempenho registrado) mesmo com a IA indisponível ou cota esgotada. |
+| RNF6 | Resiliência à Falha de IA | A aplicação deve continuar funcional (Biblioteca, resumos salvos, Matéria Didática e desempenho registrado) mesmo com a IA indisponível ou cota esgotada. |
 | RNF7 | Controle de Consumo de IA | O sistema deve registrar e exibir o consumo de IA (nº de chamadas e, quando disponível, tokens). |
 | RNF8 | Redução de Consumo de IA | O sistema deve aplicar ao menos uma estratégia de redução de consumo (ex.: memória resumida do estudante em vez de reenviar histórico completo). |
 | RNF9 | Privacidade da Biblioteca e Conversas | Resumos salvos na Biblioteca e o histórico de conversas do chat são estritamente privados por usuário; o Ranking (RF16) expõe apenas apelido e XP, nunca o conteúdo estudado. |
@@ -198,11 +198,11 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 | 5 | 1 | Alta | 8 | Como estudante, quero receber um questionário com gabarito sobre o tópico que venho estudando na conversa, para testar meu entendimento. | RF6 | ✅ |
 | 6 | 1 | Alta | 5 | Como estudante, quero responder o questionário e ver minha correção automática, para saber o que acertei e errei. | RF7 | ✅ |
 | 7 | 1 | Alta | 5 | Como estudante, quero que meu progresso seja registrado por matéria e tópico, usando meu desempenho no questionário como referência inicial, para acompanhar minha evolução ao longo do tempo. | RF8 | ✅ |
-| 8 | 2 | Alta | 8 | Como estudante, quero que os próximos questionários fiquem mais fáceis ou mais difíceis de acordo com meu desempenho no tópico, para estudar no nível certo para mim. | RF9 | ⬜ |
-| 9 | 2 | Alta | 8 | Como estudante, quero que o sistema me recomende ativamente o que estudar a seguir, com base no meu histórico de progresso, para saber qual deve ser meu próximo passo. | RF10 | ⬜ |
-| 10 | 2 | Média | 8 | Como estudante, quero que o assistente busque fontes na web sobre o assunto da conversa e me mostre de onde tirou a informação, para poder consultar o material original. | RF11 | ⬜ |
-| 11 | 2 | Alta | 8 | Como estudante, quero acessar a tela de Matéria Didática, em que poderei ver mais informações sobre o conteúdo da matéria (como se fosse uma apostila), para estudar o conteúdo de forma organizada. | RF12 | ⬜ |
-| 12 | 2 | Média | 8 | Como estudante, quero criar uma trilha de estudos e, ao criá-la, também criar quizzes para ela, para organizar meu estudo em etapas e testar o que aprendi em cada uma. | RF18 | ⬜ |
+| 8 | 2 | Alta | 8 | Como estudante, quero que os próximos questionários fiquem mais fáceis ou mais difíceis de acordo com meu desempenho no tópico, para estudar no nível certo para mim. | RF9 | ✅ |
+| 9 | 2 | Alta | 8 | Como estudante, quero que o sistema me recomende ativamente o que estudar a seguir, com base no meu histórico de progresso, para saber qual deve ser meu próximo passo. | RF10 | ✅ |
+| 10 | 2 | Média | 8 | Como estudante, quero que o assistente busque fontes na web sobre o assunto da conversa e me mostre de onde tirou a informação, para poder consultar o material original. | RF11 | ✅ |
+| 11 | 2 | Alta | 8 | Como estudante, quero acessar a tela de Matéria Didática, em que poderei ver mais informações sobre o conteúdo da matéria (como se fosse uma apostila), para estudar o conteúdo de forma organizada. | RF12 | ✅ |
+| 12 | 2 | Média | 8 | Como estudante, quero criar uma trilha de estudos e, ao criá-la, também criar quizzes para ela, para organizar meu estudo em etapas e testar o que aprendi em cada uma. | RF18 | ✅ |
 | 13 | 2 | Média | 5 | Como estudante, quero ganhar XP ao concluir um questionário, para acompanhar meu progresso de forma gamificada. | RF13 | ✅ |
 | 14 | 2 | Alta | 5 | Como estudante, quero que meus resumos salvos e meu histórico de progresso continuem acessíveis mesmo se a IA estiver indisponível, para não perder o que já estudei. | RNF6 | ✅ |
 | 15 | 3 | Média | 5 | Como estudante, quero manter uma sequência de dias respondendo questionários (streak), para me sentir motivado a continuar estudando. | RF14 | ⬜ |
@@ -228,13 +228,13 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 
 | RANK | PRIORIDADE | ESTIMATIVA | USER STORY | RF | STATUS |
 |:----:|:----------:|:----------:|------------|:--:|:------:|
-| 1 | Alta | 8 | Como estudante, quero conversar livremente com o Coach sobre o que estou estudando, para tirar dúvidas e receber apoio sobre o assunto que eu trouxer. | RF2 | ⬜ |
-| 2 | Alta | 8 | Como estudante, quero que o sistema reconheça automaticamente a matéria e o tópico que estou discutindo, para não precisar categorizar isso manualmente. | RF3 | ⬜ |
-| 3 | Alta | 5 | Como estudante, quero pedir para o Coach gerar um resumo da conversa a qualquer momento, para guardar o conteúdo estudado. | RF4 | ⬜ |
-| 4 | Alta | 5 | Como estudante, quero acessar uma biblioteca com todos os resumos que já salvei, para revisar o que estudei quando quiser. | RF5 | ⬜ |
-| 5 | Alta | 8 | Como estudante, quero receber um questionário com gabarito sobre o tópico que venho estudando na conversa, para testar meu entendimento. | RF6 | ⬜ |
-| 6 | Alta | 5 | Como estudante, quero responder o questionário e ver minha correção automática, para saber o que acertei e errei. | RF7 | ⬜ |
-| 7 | Alta | 5 | Como estudante, quero que meu progresso seja registrado por matéria e tópico, usando meu desempenho no questionário como referência inicial, para acompanhar minha evolução ao longo do tempo. | RF8 | ⬜ |
+| 1 | Alta | 8 | Como estudante, quero conversar livremente com o Coach sobre o que estou estudando, para tirar dúvidas e receber apoio sobre o assunto que eu trouxer. | RF2 | ✅ |
+| 2 | Alta | 8 | Como estudante, quero que o sistema reconheça automaticamente a matéria e o tópico que estou discutindo, para não precisar categorizar isso manualmente. | RF3 | ✅ |
+| 3 | Alta | 5 | Como estudante, quero pedir para o Coach gerar um resumo da conversa a qualquer momento, para guardar o conteúdo estudado. | RF4 | ✅ |
+| 4 | Alta | 5 | Como estudante, quero acessar uma biblioteca com todos os resumos que já salvei, para revisar o que estudei quando quiser. | RF5 | ✅ |
+| 5 | Alta | 8 | Como estudante, quero receber um questionário com gabarito sobre o tópico que venho estudando na conversa, para testar meu entendimento. | RF6 | ✅ |
+| 6 | Alta | 5 | Como estudante, quero responder o questionário e ver minha correção automática, para saber o que acertei e errei. | RF7 | ✅ |
+| 7 | Alta | 5 | Como estudante, quero que meu progresso seja registrado por matéria e tópico, usando meu desempenho no questionário como referência inicial, para acompanhar minha evolução ao longo do tempo. | RF8 | ✅ |
 
 ---
 
@@ -242,9 +242,9 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 <summary>US01 — Chat livre com o Coach</summary>
 
 **Critérios de Aceitação**
-- [ ] O sistema deve permitir que o estudante envie mensagens de texto livre a qualquer momento.
-- [ ] O assistente deve responder de forma coerente com o assunto trazido pelo estudante.
-- [ ] O assistente não deve iniciar um novo assunto por conta própria — a conversa sempre parte do estudante.
+- [x] O sistema deve permitir que o estudante envie mensagens de texto livre a qualquer momento.
+- [x] O assistente deve responder de forma coerente com o assunto trazido pelo estudante.
+- [x] O assistente não deve iniciar um novo assunto por conta própria — a conversa sempre parte do estudante.
 
 </details>
 
@@ -252,9 +252,9 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 <summary>US02 — Reconhecimento automático de matéria e tópico</summary>
 
 **Critérios de Aceitação**
-- [ ] O sistema deve identificar a matéria e o tópico discutidos a partir do conteúdo da conversa, sem exigir que o estudante os informe manualmente.
-- [ ] A matéria e o tópico identificados devem pertencer a um conjunto fixo de conteúdos do ENEM.
-- [ ] Caso a conversa não se encaixe em nenhuma matéria/tópico do conjunto fixo, o sistema deve continuar respondendo normalmente, sem travar por falta de classificação.
+- [x] O sistema deve identificar a matéria e o tópico discutidos a partir do conteúdo da conversa, sem exigir que o estudante os informe manualmente.
+- [x] A matéria e o tópico identificados devem pertencer a um conjunto fixo de conteúdos do ENEM.
+- [x] Caso a conversa não se encaixe em nenhuma matéria/tópico do conjunto fixo, o sistema deve continuar respondendo normalmente, sem travar por falta de classificação.
 
 </details>
 
@@ -262,9 +262,9 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 <summary>US03 — Geração de resumo da conversa</summary>
 
 **Critérios de Aceitação**
-- [ ] O estudante deve poder solicitar a geração de um resumo a qualquer momento durante a conversa.
-- [ ] O resumo gerado deve ser salvo automaticamente como um novo item na Biblioteca.
-- [ ] O resumo deve refletir o conteúdo discutido até o momento do pedido.
+- [x] O estudante deve poder solicitar a geração de um resumo a qualquer momento durante a conversa.
+- [x] O resumo gerado deve ser salvo automaticamente como um novo item na Biblioteca.
+- [x] O resumo deve refletir o conteúdo discutido até o momento do pedido.
 
 </details>
 
@@ -272,9 +272,9 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 <summary>US04 — Biblioteca de resumos salvos</summary>
 
 **Critérios de Aceitação**
-- [ ] A Biblioteca deve listar todos os resumos salvos pelo estudante, com título e data.
-- [ ] O estudante deve poder abrir um resumo salvo para revisão a qualquer momento.
-- [ ] A Biblioteca deve ser acessível apenas pelo próprio estudante (privada).
+- [x] A Biblioteca deve listar todos os resumos salvos pelo estudante, com título e data.
+- [x] O estudante deve poder abrir um resumo salvo para revisão a qualquer momento.
+- [x] A Biblioteca deve ser acessível apenas pelo próprio estudante (privada).
 
 </details>
 
@@ -282,9 +282,9 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 <summary>US05 — Geração de questionário e gabarito</summary>
 
 **Critérios de Aceitação**
-- [ ] O questionário deve ser gerado com base no tópico identificado na conversa (RF3).
-- [ ] Cada questão deve ter um gabarito associado, gerado junto com o questionário.
-- [ ] O questionário deve conter uma quantidade mínima de questões definida pela equipe.
+- [x] O questionário deve ser gerado com base no tópico identificado na conversa (RF3).
+- [x] Cada questão deve ter um gabarito associado, gerado junto com o questionário.
+- [x] O questionário deve conter uma quantidade mínima de questões definida pela equipe.
 
 </details>
 
@@ -292,9 +292,9 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 <summary>US06 — Correção automática do questionário</summary>
 
 **Critérios de Aceitação**
-- [ ] O estudante deve poder responder o questionário diretamente no aplicativo.
-- [ ] O sistema deve corrigir automaticamente as respostas comparando com o gabarito.
-- [ ] O estudante deve visualizar quais questões acertou e errou ao final.
+- [x] O estudante deve poder responder o questionário diretamente no aplicativo.
+- [x] O sistema deve corrigir automaticamente as respostas comparando com o gabarito.
+- [x] O estudante deve visualizar quais questões acertou e errou ao final.
 
 </details>
 
@@ -302,9 +302,9 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 <summary>US07 — Registro de progresso por matéria/tópico</summary>
 
 **Critérios de Aceitação**
-- [ ] O primeiro questionário respondido em uma matéria/tópico deve ser registrado como referência inicial de desempenho.
-- [ ] O progresso deve ser registrado de forma específica por matéria e tópico, não apenas como uma métrica geral de uso.
-- [ ] O histórico de progresso deve ficar vinculado ao perfil do estudante e ser consultável.
+- [x] O primeiro questionário respondido em uma matéria/tópico deve ser registrado como referência inicial de desempenho.
+- [x] O progresso deve ser registrado de forma específica por matéria e tópico, não apenas como uma métrica geral de uso.
+- [x] O histórico de progresso deve ficar vinculado ao perfil do estudante e ser consultável.
 
 </details>
 
@@ -318,17 +318,17 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 <br>
 
 > **Período:** 05/10/2026 à 25/10/2026
-> **Foco:** O sistema passa a reagir ao desempenho do estudante (ajustando a dificuldade) e a recomendar proativamente o próximo passo com base no histórico. A tela de Matéria Didática, com o conteúdo de cada matéria em formato de apostila, passa a ser a tela principal, e o estudante pode criar suas próprias trilhas de estudo com quizzes. O chat ganha busca de fontes na web, com gamificação básica (XP) e resiliência caso a IA falhe.
+> **Foco:** O sistema passa a reagir ao desempenho do estudante (ajustando a dificuldade automaticamente) e a recomendar proativamente o próximo passo com base no histórico. A tela de Matéria Didática, com o conteúdo de cada matéria e tópico em formato de apostila, passa a ser a tela principal e ajuda quem não sabe por onde começar; o estudante também pode criar suas próprias trilhas de estudo com quizzes. O chat ganha busca de fontes na web, e o sistema ganha gamificação básica (XP) e resiliência caso a IA falhe.
 
 | RANK | PRIORIDADE | ESTIMATIVA | USER STORY | RF | STATUS |
 |:----:|:----------:|:----------:|------------|:--:|:------:|
-| 8 | Alta | 8 | Como estudante, quero que os próximos questionários fiquem mais fáceis ou mais difíceis de acordo com meu desempenho no tópico, para estudar no nível certo para mim. | RF9 | ⬜ |
-| 9 | Alta | 8 | Como estudante, quero que o sistema me recomende ativamente o que estudar a seguir, com base no meu histórico de progresso, para saber qual deve ser meu próximo passo. | RF10 | ⬜ |
-| 10 | Média | 8 | Como estudante, quero que o assistente busque fontes na web sobre o assunto da conversa e me mostre de onde tirou a informação, para poder consultar o material original. | RF11 | ⬜ |
-| 11 | Alta | 8 | Como estudante, quero acessar a tela de Matéria Didática, em que poderei ver mais informações sobre o conteúdo da matéria (como se fosse uma apostila), para estudar o conteúdo de forma organizada. | RF12 | ⬜ |
-| 12 | Média | 8 | Como estudante, quero criar uma trilha de estudos e, ao criá-la, também criar quizzes para ela, para organizar meu estudo em etapas e testar o que aprendi em cada uma. | RF18 | ⬜ |
-| 13 | Média | 5 | Como estudante, quero ganhar XP ao concluir um questionário, para acompanhar meu progresso de forma gamificada. | RF13 | ⬜ |
-| 14 | Alta | 5 | Como estudante, quero que meus resumos salvos e meu histórico de progresso continuem acessíveis mesmo se a IA estiver indisponível, para não perder o que já estudei. | RNF6 | ⬜ |
+| 8 | Alta | 8 | Como estudante, quero que os próximos questionários fiquem mais fáceis ou mais difíceis de acordo com meu desempenho no tópico, para estudar no nível certo para mim. | RF9 | ✅ |
+| 9 | Alta | 8 | Como estudante, quero que o sistema me recomende ativamente o que estudar a seguir, com base no meu histórico de progresso, para saber qual deve ser meu próximo passo. | RF10 | ✅ |
+| 10 | Média | 8 | Como estudante, quero que o assistente busque fontes na web sobre o assunto da conversa e me mostre de onde tirou a informação, para poder consultar o material original. | RF11 | ✅ |
+| 11 | Alta | 8 | Como estudante, quero acessar a tela de Matéria Didática, em que poderei ver mais informações sobre o conteúdo da matéria (como se fosse uma apostila), para estudar o conteúdo de forma organizada. | RF12 | ✅ |
+| 12 | Média | 8 | Como estudante, quero criar uma trilha de estudos e, ao criá-la, também criar quizzes para ela, para organizar meu estudo em etapas e testar o que aprendi em cada uma. | RF18 | ✅ |
+| 13 | Média | 5 | Como estudante, quero ganhar XP ao concluir um questionário, para acompanhar meu progresso de forma gamificada. | RF13 | ✅ |
+| 14 | Alta | 5 | Como estudante, quero que meus resumos salvos e meu histórico de progresso continuem acessíveis mesmo se a IA estiver indisponível, para não perder o que já estudei. | RNF6 | ✅ |
 
 ---
 
@@ -336,9 +336,9 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 <summary>US08 — Ajuste de dificuldade do questionário</summary>
 
 **Critérios de Aceitação**
-- [ ] O sistema deve considerar o desempenho do estudante no tópico ao gerar o próximo questionário sobre aquele tópico.
-- [ ] Um desempenho bom deve resultar em questões de dificuldade igual ou maior; um desempenho fraco deve resultar em questões de reforço.
-- [ ] O ajuste de dificuldade deve ser perceptível ao estudante (ex.: indicação do nível do questionário).
+- [x] O sistema deve considerar o desempenho do estudante no tópico ao gerar o próximo questionário sobre aquele tópico.
+- [x] Um desempenho bom deve resultar em questões de dificuldade igual ou maior; um desempenho fraco deve resultar em questões de reforço.
+- [x] O ajuste deve acontecer de forma automática: o estudante não precisa escolher, configurar nem saber qual é o nível de dificuldade do questionário.
 
 </details>
 
@@ -346,9 +346,9 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 <summary>US09 — Recomendação proativa do próximo passo</summary>
 
 **Critérios de Aceitação**
-- [ ] O sistema deve sugerir ativamente ao estudante o que estudar a seguir, com base no histórico de progresso por matéria/tópico.
-- [ ] A recomendação deve priorizar matérias/tópicos com desempenho mais fraco ou ainda não estudados.
-- [ ] O estudante deve poder ignorar a recomendação e continuar a conversa livremente sobre outro assunto.
+- [x] O sistema deve sugerir ativamente ao estudante o que estudar a seguir, com base no histórico de progresso por matéria/tópico.
+- [x] A recomendação deve priorizar matérias/tópicos com desempenho mais fraco ou ainda não estudados.
+- [x] O estudante deve poder ignorar a recomendação e continuar a conversa livremente sobre outro assunto, ou seguir uma trilha própria (RF18).
 
 </details>
 
@@ -356,9 +356,9 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 <summary>US10 — Busca e citação de fontes externas</summary>
 
 **Critérios de Aceitação**
-- [ ] O sistema deve buscar fontes na web relacionadas ao assunto da conversa quando necessário para embasar a resposta.
-- [ ] Toda resposta que utilizar uma fonte externa deve indicar de onde a informação foi retirada.
-- [ ] As fontes citadas devem ser identificáveis pelo estudante (título e/ou link).
+- [x] O sistema deve buscar fontes na web relacionadas ao assunto da conversa quando necessário para embasar a resposta.
+- [x] Toda resposta que utilizar uma fonte externa deve indicar de onde a informação foi retirada.
+- [x] As fontes citadas devem ser identificáveis pelo estudante (título e/ou link).
 
 </details>
 
@@ -366,9 +366,11 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 <summary>US11 — Tela de Matéria Didática</summary>
 
 **Critérios de Aceitação**
-- [ ] A tela de Matéria Didática deve ser a tela principal exibida ao estudante após o login.
-- [ ] O estudante deve poder navegar pelas matérias e tópicos do conjunto fixo de conteúdos do ENEM (RF3).
-- [ ] Ao abrir um tópico, o sistema deve exibir o conteúdo didático daquela matéria em formato de apostila.
+- [x] A tela de Matéria Didática deve ser a tela principal exibida ao estudante após o login.
+- [x] O estudante deve poder navegar pelas matérias e tópicos do conjunto fixo de conteúdos do ENEM (RF3).
+- [x] Ao abrir um tópico, o sistema deve exibir o conteúdo didático daquela matéria em formato de apostila.
+- [x] O estudante apenas consulta o conteúdo; ele é mantido pelo administrador, com apoio de IA.
+- [x] A Matéria Didática deve usar as mesmas matérias e tópicos reconhecidos no chat (RF3), para o estudante poder ligar o que conversou ao conteúdo da apostila.
 
 </details>
 
@@ -376,9 +378,10 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 <summary>US12 — Criação de trilha de estudos com quizzes</summary>
 
 **Critérios de Aceitação**
-- [ ] O estudante deve poder criar uma trilha de estudos, definindo um nome e as matérias/tópicos que farão parte dela.
-- [ ] Durante a criação da trilha, o estudante deve poder criar quizzes vinculados a ela.
-- [ ] Os quizzes da trilha devem ser corrigidos automaticamente (RF7) e alimentar o Registro de Progresso por matéria/tópico (RF8).
+- [x] O estudante deve poder criar uma trilha de estudos, definindo um nome e as matérias/tópicos que farão parte dela.
+- [x] Durante a criação da trilha, o estudante deve poder criar quizzes vinculados a ela.
+- [x] Os quizzes da trilha devem ser corrigidos automaticamente (RF7) e alimentar o Registro de Progresso por matéria/tópico (RF8).
+- [x] A trilha é criada pelo próprio estudante e não substitui a recomendação proativa do sistema (RF10); as duas funcionam em paralelo.
 
 </details>
 
@@ -386,9 +389,9 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 <summary>US13 — Ganho de XP por questionário concluído</summary>
 
 **Critérios de Aceitação**
-- [ ] O estudante deve ganhar XP ao concluir um questionário.
-- [ ] O sistema deve exibir o XP atual do estudante.
-- [ ] O cálculo de XP deve ser feito pela aplicação, não pela IA.
+- [x] O estudante deve ganhar XP ao concluir um questionário.
+- [x] O sistema deve exibir o XP atual do estudante.
+- [x] O cálculo de XP deve ser feito pela aplicação, não pela IA.
 
 </details>
 
@@ -396,9 +399,9 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 <summary>US14 — Resiliência à falha de IA</summary>
 
 **Critérios de Aceitação**
-- [ ] A Biblioteca e o registro de progresso devem continuar acessíveis mesmo com a IA indisponível.
-- [ ] O chat deve sinalizar claramente quando não conseguir gerar uma resposta.
-- [ ] Nenhuma funcionalidade não dependente de IA deve ficar bloqueada por essa falha.
+- [x] A Biblioteca, a Matéria Didática e o registro de progresso devem continuar acessíveis mesmo com a IA indisponível.
+- [x] O chat deve sinalizar claramente quando não conseguir gerar uma resposta.
+- [x] Nenhuma funcionalidade não dependente de IA deve ficar bloqueada por essa falha.
 
 </details>
 
@@ -412,7 +415,7 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 <br>
 
 > **Período:** 02/11/2026 à 22/11/2026
-> **Foco:** O estudante acompanha streak, % média de acerto, ranking entre usuários (por apelido) e cards revisados, enquanto a equipe garante controle e redução de consumo de IA.
+> **Foco:** O estudante acompanha, na tela de Desempenho, streak, % média de acerto, ranking entre usuários (por apelido) e cards revisados, enquanto a equipe garante controle e redução de consumo de IA.
 
 | RANK | PRIORIDADE | ESTIMATIVA | USER STORY | RF | STATUS |
 |:----:|:----------:|:----------:|------------|:--:|:------:|
@@ -449,7 +452,7 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 <summary>US17 — Ranking entre usuários</summary>
 
 **Critérios de Aceitação**
-- [ ] O ranking deve exibir os estudantes ordenados por XP, do maior para o menor.
+- [ ] O ranking deve exibir os estudantes ordenados por XP, do maior para o menor, na tela de Desempenho.
 - [ ] O ranking deve identificar cada estudante apenas pelo apelido, nunca pelo nome real.
 - [ ] O estudante deve conseguir identificar sua própria posição no ranking.
 
@@ -472,6 +475,7 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 - [ ] O sistema deve registrar cada chamada feita à IA (data/hora e funcionalidade de origem).
 - [ ] Quando disponível pelo provedor, o sistema deve registrar também a quantidade de tokens usados.
 - [ ] O administrador deve conseguir visualizar um resumo do consumo por período.
+- [ ] O acesso a essas informações deve ser restrito ao administrador (estudantes não as visualizam).
 
 </details>
 
