@@ -21,6 +21,7 @@
 - [Tecnologias utilizadas](#tecnologias)
 - [Padrões de Commit](#padrao)
 - [Requisitos](#requisitos)
+- [Funcionalidades adicionais](#funcionalidades-adicionais)
 - [Arquitetura](#arquitetura)
 - [Wireframes](#wireframes)
 - [Product Backlog](#backlog)
@@ -63,7 +64,7 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 
 ## 👁 Visão do Projeto <a name="visao-do-projeto"></a>
 
-<p>O CHATin é um <b>coach de estudos via chat com IA</b>, com foco inicial em conteúdo do ENEM: o estudante conversa livremente sobre o que está estudando, e o sistema <b>reconhece automaticamente a matéria e o tópico</b> discutidos, dentro de um conjunto fixo de conteúdos do ENEM. A qualquer momento, o estudante pode pedir um <b>resumo</b> da conversa, que fica salvo na <b>Biblioteca</b> — um repositório pessoal e privado. O sistema também gera <b>questionários com gabarito</b> sobre o tópico identificado, corrige as respostas automaticamente, e <b>registra o progresso do estudante por matéria e tópico</b>, usando o resultado do primeiro questionário como referência inicial de desempenho. Quando necessário, o chat <b>busca fontes na web</b> e indica de onde tirou cada informação. Esse histórico é usado ativamente: os próximos questionários se ajustam, de forma automática, à dificuldade que o estudante demonstrar, e o sistema <b>recomenda proativamente</b> o que estudar a seguir. Para quem não sabe por onde começar, a tela de <b>Matéria Didática</b> funciona como uma apostila guiada do conteúdo de cada matéria e tópico (organizados do mesmo jeito que o reconhecimento automático do chat) e é a tela principal da aplicação; o estudante também pode montar suas próprias <b>trilhas de estudo</b> com quizzes, que complementam a recomendação do sistema. Para manter o engajamento, o estudante ganha <b>XP</b> e acompanha, na tela de <b>Desempenho</b>, seu streak, a % média de acerto, os cards revisados e o ranking entre estudantes (identificados só por apelido). O <b>administrador</b> acompanha o consumo de IA e mantém o conteúdo da Matéria Didática, com apoio da IA. O chat nunca sugere assunto por conta própria — é sempre o estudante quem dá o ponto de partida da conversa.</p>
+<p>O CHATin é um <b>coach de estudos via chat com IA</b>, com foco inicial em conteúdo do ENEM: o estudante conversa livremente sobre o que está estudando, e o sistema <b>reconhece automaticamente a matéria e o tópico</b> discutidos, dentro de um conjunto fixo de conteúdos do ENEM. A qualquer momento, o estudante pode pedir um <b>resumo</b> da conversa, que fica salvo na <b>Biblioteca</b> — um repositório pessoal e privado. O sistema também gera <b>questionários com gabarito</b> sobre o tópico identificado, corrige as respostas automaticamente, e <b>registra o progresso do estudante por matéria e tópico</b>, usando o resultado do primeiro questionário como referência inicial de desempenho. Quando necessário, o chat <b>busca fontes na web</b> e indica de onde tirou cada informação. Esse histórico é usado ativamente: os próximos questionários se ajustam, de forma automática, à dificuldade que o estudante demonstrar, e o sistema <b>recomenda proativamente</b> o que estudar a seguir. Para quem não sabe por onde começar, a tela de <b>Matéria Didática</b> funciona como uma apostila guiada do conteúdo de cada matéria e tópico (organizados do mesmo jeito que o reconhecimento automático do chat) e é a tela principal da aplicação; o estudante também pode montar suas próprias <b>trilhas de estudo</b> com quizzes, que complementam a recomendação do sistema. Para manter o engajamento, o estudante ganha <b>XP</b> e acompanha, na tela de <b>Desempenho</b>, seu streak, a % média de acerto, os resumos revisados (cards) e o ranking entre estudantes (identificados só pelo usuário, que funciona como apelido). O <b>administrador</b> acompanha o consumo de IA e mantém o conteúdo da Matéria Didática, com apoio da IA. O chat nunca sugere assunto por conta própria — é sempre o estudante quem dá o ponto de partida da conversa.</p>
 
 ---
 
@@ -73,7 +74,7 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 |:------:|:-------:|:------:|:---------:|
 | 1 | 07/09/2026 à 27/09/2026 | Concluído | [Ver Relatório](https://github.com/Equipe-Skyfall/chatin/tree/main/docs/sprint1) |
 | 2 | 05/10/2026 à 25/10/2026 | Concluído | [Ver Relatório](https://github.com/Equipe-Skyfall/chatin/tree/main/docs/sprint2) |
-| 3 | 02/11/2026 à 22/11/2026 | Não iniciado | — |
+| 3 | 02/11/2026 à 22/11/2026 | Em andamento | [Ver Relatório](https://github.com/Equipe-Skyfall/chatin/tree/main/docs/sprint3) |
 
 ---
 
@@ -83,10 +84,12 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 |:----------:|------------|
 | ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white) ![Lucide](https://img.shields.io/badge/Lucide-1E1E1E?style=for-the-badge&logo=lucide&logoColor=white) | Frontend / App |
 | ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white) | Backend / API |
-| ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white) | Banco de Dados |
-| ![Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white) | Provedor de IA / PLN |
+| ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white) ![Alembic](https://img.shields.io/badge/Alembic-6BA81E?style=for-the-badge&logoColor=white) | Banco de Dados / Migrations |
+| ![Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white) ![Google ADK](https://img.shields.io/badge/Google_ADK-4285F4?style=for-the-badge&logo=google&logoColor=white) | Provedor de IA / PLN e agentes |
+| ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white) | Serviço de autenticação (authSys): cadastro, login e emissão do JWT validado pelo backend |
 | ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white) | Interface / Design e prototipação |
-| ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white) | Empacotamento / Deploy |
+| ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white) | Deploy do Frontend e do serviço de autenticação |
+| ![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=black) | Deploy do Backend |
 
 ---
 
@@ -140,7 +143,7 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 
 | RF | Nome | Descritivo |
 |----|------|------------|
-| RF1 | Cadastro e Login | O sistema deve permitir que o estudante crie uma conta (com apelido) e faça login. |
+| RF1 | Cadastro e Login | O sistema deve permitir que o estudante crie uma conta com usuário (apelido) e faça login. |
 | RF2 | Chat com o Coach de IA | O sistema deve permitir uma conversa livre entre o estudante e o assistente, sempre iniciada pelo estudante. |
 | RF3 | Reconhecimento Automático de Matéria e Tópico | O sistema deve identificar, a partir da conversa, a matéria e o tópico discutidos, dentro de um conjunto fixo de conteúdos do ENEM. |
 | RF4 | Geração de Resumo | O sistema deve gerar, sob pedido, um resumo da conversa e salvá-lo automaticamente na Biblioteca. |
@@ -155,8 +158,8 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 | RF13 | Gamificação — XP | O sistema deve conceder XP ao estudante a cada questionário concluído. |
 | RF14 | Gamificação — Streak de Estudos | O sistema deve contar a sequência de dias consecutivos em que o estudante respondeu ao menos um questionário. |
 | RF15 | Percentual Médio de Acerto | O sistema deve calcular e exibir a % média de acerto do estudante nos questionários. |
-| RF16 | Ranking entre Usuários | O sistema deve exibir um ranking comparando o XP dos estudantes, identificados por apelido. |
-| RF17 | Contagem de Cards Revisados | O sistema deve contar quantos resumos da Biblioteca o estudante já revisou. |
+| RF16 | Ranking entre Usuários | O sistema deve exibir um ranking comparando o XP dos estudantes, identificados pelo usuário (apelido). |
+| RF17 | Contagem de Resumos Revisados (Cards) | O sistema deve contar quantos resumos da Biblioteca o estudante já revisou. |
 | RF18 | Trilha de Estudos | O sistema deve permitir que o estudante crie trilhas de estudo e, ao criá-las, adicione quizzes a elas. As trilhas são criadas pelo próprio estudante e complementam a recomendação do sistema (RF10), sem substituí-la. |
 
 ### Requisitos Não Funcionais
@@ -166,14 +169,28 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 | RNF1 | Manual de Instalação | Documentação obrigatória (Fatec) explicando como instalar e rodar o projeto. |
 | RNF2 | Manual do Usuário | Documentação obrigatória (Fatec) explicando como usar a aplicação. |
 | RNF3 | Documentação da API | Documentação dos principais endpoints/integrações da API. |
-| RNF4 | Modelagem de Dados | Modelo do banco de dados ou estrutura de persistência utilizada, documentado. |
+| RNF4 | Modelagem de Dados | Modelo do banco de dados ou estrutura de persistência utilizada, documentado (incluindo o diagrama ER). |
 | RNF5 | Segurança de Segredos | Chaves e segredos de APIs externas não podem ficar hardcoded no código-fonte. |
 | RNF6 | Resiliência à Falha de IA | A aplicação deve continuar funcional (Biblioteca, resumos salvos, Matéria Didática e desempenho registrado) mesmo com a IA indisponível ou cota esgotada. |
 | RNF7 | Controle de Consumo de IA | O sistema deve registrar e exibir o consumo de IA (nº de chamadas e, quando disponível, tokens). |
-| RNF8 | Redução de Consumo de IA | O sistema deve aplicar ao menos uma estratégia de redução de consumo (ex.: memória resumida do estudante em vez de reenviar histórico completo). |
-| RNF9 | Privacidade da Biblioteca e Conversas | Resumos salvos na Biblioteca e o histórico de conversas do chat são estritamente privados por usuário; o Ranking (RF16) expõe apenas apelido e XP, nunca o conteúdo estudado. |
+| RNF8 | Redução de Consumo de IA | O sistema deve aplicar estratégias de redução de consumo de IA (envio apenas das mensagens recentes da conversa, respostas sem IA para pedidos comuns e reaproveitamento das fontes buscadas por tema), com o consumo medido pelo registro do RNF7. |
+| RNF9 | Privacidade da Biblioteca e Conversas | Resumos salvos na Biblioteca e o histórico de conversas do chat são estritamente privados por usuário; o Ranking (RF16) expõe apenas o usuário (apelido) e o XP, nunca o conteúdo estudado. |
 
 ---
+
+## ➕ Funcionalidades adicionais <a name="funcionalidades-adicionais"></a>
+
+Recursos já implementados que complementam os requisitos acima, sem RF/US próprios:
+
+- **Explorar trilhas:** trilhas criadas por estudantes podem ser consultadas e votadas por outros estudantes.
+- **Consentimento LGPD:** aceite dos termos no cadastro, páginas de Termos de Uso e Política de Privacidade e seção de privacidade no perfil.
+- **Resumo em PDF:** exportação de um resumo da Biblioteca em PDF.
+- **Resumo de conversas livres:** resumos também de conversas fora de um módulo.
+- **Lição inicial:** ao abrir um módulo, o Coach dá uma lição de abertura, que libera o questionário daquele módulo.
+- **Feedback dos erros:** a IA comenta as questões erradas ao fim do questionário.
+- **Práticas:** quiz personalizado e revisão por tema, que não concedem XP.
+- **Níveis de XP:** o XP acumulado define o nível do estudante.
+- **Gestão de usuários:** o administrador cria, edita e exclui contas de usuário.
 
 ## 🏗 Arquitetura <a name="arquitetura"></a>
 
@@ -210,7 +227,7 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 | 17 | 3 | Média | 8 | Como estudante, quero ver um ranking com o XP de outros estudantes (por apelido), para me sentir motivado a competir de forma saudável. | RF16 | ⬜ |
 | 18 | 3 | Baixa | 5 | Como estudante, quero que o sistema conte quantos resumos da minha biblioteca eu já revisei, para acompanhar meu hábito de revisão. | RF17 | ⬜ |
 | 19 | 3 | Alta | 5 | Como administrador, quero visualizar o consumo de chamadas e tokens de IA, para controlar custo e uso do recurso. | RNF7 | ⬜ |
-| 20 | 3 | Alta | 5 | Como estudante, quero que o assistente use um resumo do meu histórico em vez de reenviar tudo para a IA a cada interação, para economizar consumo sem perder contexto relevante. | RNF8 | ⬜ |
+| 20 | 3 | Alta | 5 | Como estudante, quero que o assistente use só o contexto recente da conversa e reaproveite o que já foi buscado, em vez de reenviar tudo para a IA, para economizar consumo sem perder contexto relevante. | RNF8 | ⬜ |
 
 ---
 
@@ -415,7 +432,7 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 <br>
 
 > **Período:** 02/11/2026 à 22/11/2026
-> **Foco:** O estudante acompanha, na tela de Desempenho, streak, % média de acerto, ranking entre usuários (por apelido) e cards revisados, enquanto a equipe garante controle e redução de consumo de IA.
+> **Foco:** O estudante acompanha, na tela de Desempenho (a tela de Progresso ampliada), streak, % média de acerto, ranking entre usuários (pelo usuário, que funciona como apelido) e resumos revisados (cards), enquanto a equipe garante controle e redução de consumo de IA. A Sprint 3 também entrega a documentação obrigatória do projeto (RNF1–RNF4).
 
 | RANK | PRIORIDADE | ESTIMATIVA | USER STORY | RF | STATUS |
 |:----:|:----------:|:----------:|------------|:--:|:------:|
@@ -424,7 +441,16 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 | 17 | Média | 8 | Como estudante, quero ver um ranking com o XP de outros estudantes (por apelido), para me sentir motivado a competir de forma saudável. | RF16 | ⬜ |
 | 18 | Baixa | 5 | Como estudante, quero que o sistema conte quantos resumos da minha biblioteca eu já revisei, para acompanhar meu hábito de revisão. | RF17 | ⬜ |
 | 19 | Alta | 5 | Como administrador, quero visualizar o consumo de chamadas e tokens de IA, para controlar custo e uso do recurso. | RNF7 | ⬜ |
-| 20 | Alta | 5 | Como estudante, quero que o assistente use um resumo do meu histórico em vez de reenviar tudo para a IA a cada interação, para economizar consumo sem perder contexto relevante. | RNF8 | ⬜ |
+| 20 | Alta | 5 | Como estudante, quero que o assistente use só o contexto recente da conversa e reaproveite o que já foi buscado, em vez de reenviar tudo para a IA, para economizar consumo sem perder contexto relevante. | RNF8 | ⬜ |
+
+**Entregas de documentação**
+
+| RNF | Entrega | STATUS |
+|:---:|---------|:------:|
+| RNF1 | Manual de Instalação | ⬜ |
+| RNF2 | Manual do Usuário | ⬜ |
+| RNF3 | Documentação da API | ⬜ |
+| RNF4 | Modelagem de Dados (incluindo o diagrama ER) | ⬜ |
 
 ---
 
@@ -442,7 +468,7 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 <summary>US16 — Percentual médio de acerto</summary>
 
 **Critérios de Aceitação**
-- [ ] O sistema deve calcular a % média de acerto com base em todos os questionários respondidos.
+- [ ] O sistema deve calcular a % média de acerto com base em todos os questionários respondidos que concedem XP (RF13), como o total de acertos dividido pelo total de questões respondidas.
 - [ ] O valor deve ser atualizado automaticamente a cada novo questionário concluído.
 - [ ] A % deve ser exibida na tela de Desempenho.
 
@@ -453,18 +479,19 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 
 **Critérios de Aceitação**
 - [ ] O ranking deve exibir os estudantes ordenados por XP, do maior para o menor, na tela de Desempenho.
-- [ ] O ranking deve identificar cada estudante apenas pelo apelido, nunca pelo nome real.
+- [ ] O ranking deve identificar cada estudante apenas pelo usuário (apelido), nunca pelo nome real.
 - [ ] O estudante deve conseguir identificar sua própria posição no ranking.
 
 </details>
 
 <details>
-<summary>US18 — Contagem de cards revisados</summary>
+<summary>US18 — Contagem de resumos revisados (cards)</summary>
 
 **Critérios de Aceitação**
 - [ ] O sistema deve contar quantas vezes o estudante abriu um resumo da Biblioteca para revisão.
 - [ ] A contagem deve ser exibida na tela de Desempenho.
 - [ ] Revisar o mesmo resumo mais de uma vez deve incrementar a contagem.
+- [ ] Baixar o resumo em PDF não conta como revisão.
 
 </details>
 
@@ -483,9 +510,10 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 <summary>US20 — Redução de consumo de IA</summary>
 
 **Critérios de Aceitação**
-- [ ] O sistema deve manter um resumo do histórico do estudante em vez do histórico completo.
-- [ ] As chamadas à IA devem usar essa versão resumida como contexto.
-- [ ] Deve ser possível demonstrar a redução de consumo obtida com a estratégia escolhida.
+- [ ] O chat deve enviar à IA apenas as mensagens recentes da conversa, e não o histórico completo.
+- [ ] Pedidos comuns do estudante devem ser respondidos sem chamar a IA.
+- [ ] As fontes buscadas na web devem ser reaproveitadas por tema, sem nova busca a cada módulo, quando aplicável.
+- [ ] A redução de consumo deve ser demonstrável pelo registro de consumo de IA (RNF7).
 
 </details>
 

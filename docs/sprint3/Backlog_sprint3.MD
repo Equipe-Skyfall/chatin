@@ -7,5 +7,5 @@
 | 17 | 3 | Média | 8 | Como estudante, quero ver um ranking com o XP de outros estudantes (por apelido), para me sentir motivado a competir de forma saudável. | ⬜ |
 | 18 | 3 | Baixa | 5 | Como estudante, quero que o sistema conte quantos resumos da minha biblioteca eu já revisei, para acompanhar meu hábito de revisão. | ⬜ |
 | 19 | 3 | Alta | 5 | Como administrador, quero visualizar o consumo de chamadas e tokens de IA, para controlar custo e uso do recurso. | ⬜ |
-| 20 | 3 | Alta | 5 | Como estudante, quero que o assistente use um resumo do meu histórico em vez de reenviar tudo para a IA a cada interação, para economizar consumo sem perder contexto relevante. | ⬜ |
+| 20 | 3 | Alta | 5 | Como estudante, quero que o assistente use só o contexto recente da conversa e reaproveite o que já foi buscado, em vez de reenviar tudo para a IA, para economizar consumo sem perder contexto relevante. | ⬜ |
 ---
