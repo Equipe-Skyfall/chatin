@@ -74,7 +74,7 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 |:------:|:-------:|:------:|:---------:|
 | 1 | 07/09/2026 à 27/09/2026 | Concluído | [Ver Relatório](https://github.com/Equipe-Skyfall/chatin/tree/main/docs/sprint1) |
 | 2 | 05/10/2026 à 25/10/2026 | Concluído | [Ver Relatório](https://github.com/Equipe-Skyfall/chatin/tree/main/docs/sprint2) |
-| 3 | 02/11/2026 à 22/11/2026 | Em andamento | [Ver Relatório](https://github.com/Equipe-Skyfall/chatin/tree/main/docs/sprint3) |
+| 3 | 02/11/2026 à 22/11/2026 | Concluído | [Ver Relatório](https://github.com/Equipe-Skyfall/chatin/tree/main/docs/sprint3) |
 
 ---
 
