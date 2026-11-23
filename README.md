@@ -97,7 +97,7 @@ Problemas relacionados à gestão do progresso e dos recursos do sistema:
 - **Main** — Estado principal que armazena a versão estável do projeto
 - **Dev** — Estado de desenvolvimento atual
 
-### ⬜ Status do projeto: 2/3 Sprints
+### ✅ Status do projeto: 3/3 Sprints
 
 ---
 
@@ -192,6 +192,8 @@ Recursos já implementados que complementam os requisitos acima, sem RF/US próp
 - **Níveis de XP:** o XP acumulado define o nível do estudante.
 - **Gestão de usuários:** o administrador cria, edita e exclui contas de usuário.
 
+---
+
 ## 🏗 Arquitetura <a name="arquitetura"></a>
 
 <img src="docs/arquitetura.jpg">
@@ -222,12 +224,12 @@ Recursos já implementados que complementam os requisitos acima, sem RF/US próp
 | 12 | 2 | Média | 8 | Como estudante, quero criar uma trilha de estudos e, ao criá-la, também criar quizzes para ela, para organizar meu estudo em etapas e testar o que aprendi em cada uma. | RF18 | ✅ |
 | 13 | 2 | Média | 5 | Como estudante, quero ganhar XP ao concluir um questionário, para acompanhar meu progresso de forma gamificada. | RF13 | ✅ |
 | 14 | 2 | Alta | 5 | Como estudante, quero que meus resumos salvos e meu histórico de progresso continuem acessíveis mesmo se a IA estiver indisponível, para não perder o que já estudei. | RNF6 | ✅ |
-| 15 | 3 | Média | 5 | Como estudante, quero manter uma sequência de dias respondendo questionários (streak), para me sentir motivado a continuar estudando. | RF14 | ⬜ |
-| 16 | 3 | Média | 5 | Como estudante, quero ver minha porcentagem média de acerto nos questionários, para entender meu nível geral de desempenho. | RF15 | ⬜ |
-| 17 | 3 | Média | 8 | Como estudante, quero ver um ranking com o XP de outros estudantes (por apelido), para me sentir motivado a competir de forma saudável. | RF16 | ⬜ |
-| 18 | 3 | Baixa | 5 | Como estudante, quero que o sistema conte quantos resumos da minha biblioteca eu já revisei, para acompanhar meu hábito de revisão. | RF17 | ⬜ |
-| 19 | 3 | Alta | 5 | Como administrador, quero visualizar o consumo de chamadas e tokens de IA, para controlar custo e uso do recurso. | RNF7 | ⬜ |
-| 20 | 3 | Alta | 5 | Como estudante, quero que o assistente use só o contexto recente da conversa e reaproveite o que já foi buscado, em vez de reenviar tudo para a IA, para economizar consumo sem perder contexto relevante. | RNF8 | ⬜ |
+| 15 | 3 | Média | 5 | Como estudante, quero manter uma sequência de dias respondendo questionários (streak), para me sentir motivado a continuar estudando. | RF14 | ✅ |
+| 16 | 3 | Média | 5 | Como estudante, quero ver minha porcentagem média de acerto nos questionários, para entender meu nível geral de desempenho. | RF15 | ✅ |
+| 17 | 3 | Média | 8 | Como estudante, quero ver um ranking com o XP de outros estudantes (por apelido), para me sentir motivado a competir de forma saudável. | RF16 | ✅ |
+| 18 | 3 | Baixa | 5 | Como estudante, quero que o sistema conte quantos resumos da minha biblioteca eu já revisei, para acompanhar meu hábito de revisão. | RF17 | ✅ |
+| 19 | 3 | Alta | 5 | Como administrador, quero visualizar o consumo de chamadas e tokens de IA, para controlar custo e uso do recurso. | RNF7 | ✅ |
+| 20 | 3 | Alta | 5 | Como estudante, quero que o assistente use só o contexto recente da conversa e reaproveite o que já foi buscado, em vez de reenviar tudo para a IA, para economizar consumo sem perder contexto relevante. | RNF8 | ✅ |
 
 ---
 
@@ -436,21 +438,21 @@ Recursos já implementados que complementam os requisitos acima, sem RF/US próp
 
 | RANK | PRIORIDADE | ESTIMATIVA | USER STORY | RF | STATUS |
 |:----:|:----------:|:----------:|------------|:--:|:------:|
-| 15 | Média | 5 | Como estudante, quero manter uma sequência de dias respondendo questionários (streak), para me sentir motivado a continuar estudando. | RF14 | ⬜ |
-| 16 | Média | 5 | Como estudante, quero ver minha porcentagem média de acerto nos questionários, para entender meu nível geral de desempenho. | RF15 | ⬜ |
-| 17 | Média | 8 | Como estudante, quero ver um ranking com o XP de outros estudantes (por apelido), para me sentir motivado a competir de forma saudável. | RF16 | ⬜ |
-| 18 | Baixa | 5 | Como estudante, quero que o sistema conte quantos resumos da minha biblioteca eu já revisei, para acompanhar meu hábito de revisão. | RF17 | ⬜ |
-| 19 | Alta | 5 | Como administrador, quero visualizar o consumo de chamadas e tokens de IA, para controlar custo e uso do recurso. | RNF7 | ⬜ |
-| 20 | Alta | 5 | Como estudante, quero que o assistente use só o contexto recente da conversa e reaproveite o que já foi buscado, em vez de reenviar tudo para a IA, para economizar consumo sem perder contexto relevante. | RNF8 | ⬜ |
+| 15 | Média | 5 | Como estudante, quero manter uma sequência de dias respondendo questionários (streak), para me sentir motivado a continuar estudando. | RF14 | ✅ |
+| 16 | Média | 5 | Como estudante, quero ver minha porcentagem média de acerto nos questionários, para entender meu nível geral de desempenho. | RF15 | ✅ |
+| 17 | Média | 8 | Como estudante, quero ver um ranking com o XP de outros estudantes (por apelido), para me sentir motivado a competir de forma saudável. | RF16 | ✅ |
+| 18 | Baixa | 5 | Como estudante, quero que o sistema conte quantos resumos da minha biblioteca eu já revisei, para acompanhar meu hábito de revisão. | RF17 | ✅ |
+| 19 | Alta | 5 | Como administrador, quero visualizar o consumo de chamadas e tokens de IA, para controlar custo e uso do recurso. | RNF7 | ✅ |
+| 20 | Alta | 5 | Como estudante, quero que o assistente use só o contexto recente da conversa e reaproveite o que já foi buscado, em vez de reenviar tudo para a IA, para economizar consumo sem perder contexto relevante. | RNF8 | ✅ |
 
 **Entregas de documentação**
 
 | RNF | Entrega | STATUS |
 |:---:|---------|:------:|
-| RNF1 | Manual de Instalação | ⬜ |
-| RNF2 | Manual do Usuário | ⬜ |
-| RNF3 | Documentação da API | ⬜ |
-| RNF4 | Modelagem de Dados (incluindo o diagrama ER) | ⬜ |
+| RNF1 | [Manual de Instalação](docs/Manual_CHATin.pdf) (Parte I do manual) | ✅ |
+| RNF2 | [Manual do Usuário](docs/Manual_CHATin.pdf) (Partes II e III do manual) | ✅ |
+| RNF3 | [Documentação da API](https://github.com/Equipe-Skyfall/chatin-back#4-api) | ✅ |
+| RNF4 | [Modelagem de Dados](https://github.com/Equipe-Skyfall/chatin-back#3-modelo-de-dados-er) (incluindo o diagrama ER) e [complemento da Sprint 3](https://github.com/Equipe-Skyfall/chatin-back/blob/main/docs/modelo-de-dados-complemento.md) | ✅ |
 
 ---
 
@@ -458,9 +460,9 @@ Recursos já implementados que complementam os requisitos acima, sem RF/US próp
 <summary>US15 — Streak de dias de estudo</summary>
 
 **Critérios de Aceitação**
-- [ ] O sistema deve contar a sequência de dias consecutivos em que o estudante respondeu ao menos um questionário.
-- [ ] O streak deve ser exibido de forma visível na tela de Desempenho.
-- [ ] A quebra do streak deve reiniciar a contagem a zero.
+- [x] O sistema deve contar a sequência de dias consecutivos em que o estudante respondeu ao menos um questionário.
+- [x] O streak deve ser exibido de forma visível na tela de Desempenho.
+- [x] A quebra do streak deve reiniciar a contagem a zero.
 
 </details>
 
@@ -468,9 +470,9 @@ Recursos já implementados que complementam os requisitos acima, sem RF/US próp
 <summary>US16 — Percentual médio de acerto</summary>
 
 **Critérios de Aceitação**
-- [ ] O sistema deve calcular a % média de acerto com base em todos os questionários respondidos que concedem XP (RF13), como o total de acertos dividido pelo total de questões respondidas.
-- [ ] O valor deve ser atualizado automaticamente a cada novo questionário concluído.
-- [ ] A % deve ser exibida na tela de Desempenho.
+- [x] O sistema deve calcular a % média de acerto com base em todos os questionários respondidos que concedem XP (RF13), como o total de acertos dividido pelo total de questões respondidas.
+- [x] O valor deve ser atualizado automaticamente a cada novo questionário concluído.
+- [x] A % deve ser exibida na tela de Desempenho.
 
 </details>
 
@@ -478,9 +480,9 @@ Recursos já implementados que complementam os requisitos acima, sem RF/US próp
 <summary>US17 — Ranking entre usuários</summary>
 
 **Critérios de Aceitação**
-- [ ] O ranking deve exibir os estudantes ordenados por XP, do maior para o menor, na tela de Desempenho.
-- [ ] O ranking deve identificar cada estudante apenas pelo usuário (apelido), nunca pelo nome real.
-- [ ] O estudante deve conseguir identificar sua própria posição no ranking.
+- [x] O ranking deve exibir os estudantes ordenados por XP, do maior para o menor, na tela de Desempenho.
+- [x] O ranking deve identificar cada estudante apenas pelo usuário (apelido), nunca pelo nome real.
+- [x] O estudante deve conseguir identificar sua própria posição no ranking.
 
 </details>
 
@@ -488,10 +490,10 @@ Recursos já implementados que complementam os requisitos acima, sem RF/US próp
 <summary>US18 — Contagem de resumos revisados (cards)</summary>
 
 **Critérios de Aceitação**
-- [ ] O sistema deve contar quantas vezes o estudante abriu um resumo da Biblioteca para revisão.
-- [ ] A contagem deve ser exibida na tela de Desempenho.
-- [ ] Revisar o mesmo resumo mais de uma vez deve incrementar a contagem.
-- [ ] Baixar o resumo em PDF não conta como revisão.
+- [x] O sistema deve contar quantas vezes o estudante abriu um resumo da Biblioteca para revisão.
+- [x] A contagem deve ser exibida na tela de Desempenho.
+- [x] Revisar o mesmo resumo mais de uma vez deve incrementar a contagem.
+- [x] Baixar o resumo em PDF não conta como revisão.
 
 </details>
 
@@ -499,10 +501,10 @@ Recursos já implementados que complementam os requisitos acima, sem RF/US próp
 <summary>US19 — Controle de consumo de IA</summary>
 
 **Critérios de Aceitação**
-- [ ] O sistema deve registrar cada chamada feita à IA (data/hora e funcionalidade de origem).
-- [ ] Quando disponível pelo provedor, o sistema deve registrar também a quantidade de tokens usados.
-- [ ] O administrador deve conseguir visualizar um resumo do consumo por período.
-- [ ] O acesso a essas informações deve ser restrito ao administrador (estudantes não as visualizam).
+- [x] O sistema deve registrar cada chamada feita à IA (data/hora e funcionalidade de origem).
+- [x] Quando disponível pelo provedor, o sistema deve registrar também a quantidade de tokens usados.
+- [x] O administrador deve conseguir visualizar um resumo do consumo por período.
+- [x] O acesso a essas informações deve ser restrito ao administrador (estudantes não as visualizam).
 
 </details>
 
@@ -510,10 +512,10 @@ Recursos já implementados que complementam os requisitos acima, sem RF/US próp
 <summary>US20 — Redução de consumo de IA</summary>
 
 **Critérios de Aceitação**
-- [ ] O chat deve enviar à IA apenas as mensagens recentes da conversa, e não o histórico completo.
-- [ ] Pedidos comuns do estudante devem ser respondidos sem chamar a IA.
-- [ ] As fontes buscadas na web devem ser reaproveitadas por tema, sem nova busca a cada módulo, quando aplicável.
-- [ ] A redução de consumo deve ser demonstrável pelo registro de consumo de IA (RNF7).
+- [x] O chat deve enviar à IA apenas as mensagens recentes da conversa, e não o histórico completo.
+- [x] Pedidos comuns do estudante devem ser respondidos sem chamar a IA.
+- [x] As fontes buscadas na web devem ser reaproveitadas por tema, sem nova busca a cada módulo, quando aplicável.
+- [x] A redução de consumo deve ser demonstrável pelo registro de consumo de IA (RNF7).
 
 </details>
 
@@ -524,6 +526,9 @@ Recursos já implementados que complementam os requisitos acima, sem RF/US próp
 ## Links Úteis <a name="links"></a>
 
 - [Desafio do Parceiro Acadêmico (GSW)](docs/Desafio%20do%20Parceiro%20Academico%206DSM%20-%20GSW%20-%20final.pdf)
+- [Manual de Instalação e do Usuário](docs/Manual_CHATin.pdf)
+- [Definition of Ready (DoR)](docs/DoR_CHATin.pdf) e [Definition of Done (DoD)](docs/DoD_CHATin.pdf)
+- [Documentação da API](https://github.com/Equipe-Skyfall/chatin-back#4-api) e [Modelo de dados (ER)](https://github.com/Equipe-Skyfall/chatin-back#3-modelo-de-dados-er) — no repositório do back-end
 
 ---
 
